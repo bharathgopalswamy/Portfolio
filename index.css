@@ -1,0 +1,171 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* =========================================================
+   HERO + EDUCATION (Seamless section)
+   ========================================================= */
+
+.hero-education {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 65%);
+}
+
+/* Remove the jumbotron "gap" so it merges with education */
+.hero-education .jumbotron {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* =========================================================
+   EDUCATION SECTION
+   ========================================================= */
+
+.edu-section {
+  position: relative;
+  padding: 28px 0 80px; /* small top padding to connect to jumbotron */
+  overflow: hidden;
+}
+
+/* subtle background blobs */
+.edu-section::before {
+  content: "";
+  position: absolute;
+  top: -110px;
+  right: -110px;
+  width: 320px;
+  height: 320px;
+  background: rgba(0, 123, 255, 0.06);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.edu-section::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  left: -140px;
+  width: 380px;
+  height: 380px;
+  background: rgba(40, 167, 69, 0.06);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Keep education content above background blobs */
+.edu-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* LEFT side content (clean, NOT a card) */
+.edu-left-content h2 {
+  letter-spacing: 0.2px;
+}
+
+.edu-left-content p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* If your HTML still has .edu-left-box, keep it clean too (fallback) */
+.edu-left-box {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 !important;
+}
+
+/* =========================================================
+   CAROUSEL (Bootstrap 4)
+   ========================================================= */
+
+/* Prevent height jumping */
+#carouselExampleIndicators .carousel-inner,
+#carouselExampleIndicators .carousel-item,
+#carouselExampleIndicators .slide-wrap {
+  min-height: 520px;
+}
+
+#carouselExampleIndicators .carousel-inner {
+  overflow: hidden;
+}
+
+/* Center slide content */
+#carouselExampleIndicators .slide-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Slide card look */
+.edu-card {
+  border: 0 !important;
+  outline: none !important;
+  border-radius: 18px;
+  background: #ffffff;
+  width: 100%;
+  max-width: 980px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* Badge pill style */
+.badge-pillish {
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* Indicators visible on light background */
+#carouselExampleIndicators .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+#carouselExampleIndicators .carousel-indicators .active {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* Better arrows on light background */
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next-icon {
+  filter: invert(1);
+  opacity: 0.95;
+}
+
+/* Smooth transition (works with Bootstrap 4 carousel) */
+#carouselExampleIndicators .carousel-item {
+  transition: transform 0.9s ease-in-out;
+}
+
+/* Optional: add subtle fade (keep if you like it; remove if you want only slide) */
+#carouselExampleIndicators .carousel-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out, transform 0.9s ease-in-out;
+}
+
+#carouselExampleIndicators .carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-indicators {
+  bottom: -35px; /* move dots slightly below the card */
+}
+
+.carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.25);
+}
+
+.carousel-indicators .active {
+  background-color: #007bff; /* Bootstrap primary color */
+}
