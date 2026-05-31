@@ -1,1350 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bharath Gopalsamy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bharath Gopalsamy — Full-Stack Developer portfolio focused on React, TypeScript, Node.js, Django, MERN, AI products, and scalable web applications." />
+  <title>Bharath Gopalsamy | Full-Stack Developer</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2e;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.13);
+      --text: #eef5ff;
+      --muted: #aab8cc;
+      --brand: #60a5fa;
+      --brand-2: #22c55e;
+      --brand-3: #a78bfa;
+      --light: #f7faff;
+      --dark-text: #132033;
+      --dark-muted: #5f6f86;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+      --radius: 26px;
+    }
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
 
-  <link rel="stylesheet" href="index.css">
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
+    a { text-decoration: none; }
+
+    .navbar {
+      backdrop-filter: blur(18px);
+      background: rgba(7, 17, 31, 0.82) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text) !important;
+    }
+
+    .nav-link {
+      color: rgba(238, 245, 255, 0.76) !important;
+      font-weight: 600;
+      font-size: 0.93rem;
+      margin-left: 0.3rem;
+    }
+
+    .nav-link:hover, .nav-link.active { color: #fff !important; }
+
+    .section {
+      padding: 96px 0;
+      position: relative;
+    }
+
+    .section-light {
+      background: var(--light);
+      color: var(--dark-text);
+    }
+
+    .section-title {
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--brand);
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    .section-light .section-subtitle,
+    .section-light .text-muted-custom { color: var(--dark-muted); }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 135px 0 80px;
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.35), transparent 32%),
+        radial-gradient(circle at 78% 18%, rgba(34, 197, 94, 0.18), transparent 30%),
+        radial-gradient(circle at 50% 95%, rgba(167, 139, 250, 0.18), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0d1b2e 55%, #06111e 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 78%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.7rem 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      color: rgba(238, 245, 255, 0.92);
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      font-size: clamp(3.1rem, 8vw, 6.8rem);
+      font-weight: 800;
+      letter-spacing: -0.075em;
+      line-height: 0.95;
+      margin: 1.35rem 0 1.2rem;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #ffffff, #93c5fd 42%, #86efac 78%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      max-width: 760px;
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      color: rgba(238, 245, 255, 0.78);
+      line-height: 1.8;
+    }
+
+    .btn-glow {
+      border: 0;
+      color: #06111e;
+      font-weight: 800;
+      padding: 0.9rem 1.25rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #93c5fd, #86efac);
+      box-shadow: 0 18px 50px rgba(96, 165, 250, 0.24);
+    }
+
+    .btn-glow:hover { transform: translateY(-2px); color: #06111e; }
+
+    .btn-ghost {
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      font-weight: 800;
+      padding: 0.9rem 1.25rem;
+      border-radius: 999px;
+    }
+
+    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.32); transform: translateY(-2px); }
+
+    .glass-card {
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.24);
+      box-shadow: 0 28px 90px rgba(0,0,0,0.28);
+    }
+
+    .profile-card {
+      padding: 1.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      right: -55px;
+      top: -55px;
+      background: radial-gradient(circle, rgba(96,165,250,0.35), transparent 65%);
+      pointer-events: none;
+    }
+
+    .profile-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .stat-box {
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 1rem;
+      background: rgba(255,255,255,0.06);
+      height: 100%;
+    }
+
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .metric-strip {
+      margin-top: -42px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .metric-card {
+      background: #ffffff;
+      color: var(--dark-text);
+      border-radius: 22px;
+      box-shadow: 0 20px 60px rgba(13, 27, 46, 0.15);
+      padding: 1.25rem;
+      height: 100%;
+      border: 1px solid rgba(19, 32, 51, 0.08);
+    }
+
+    .metric-card i { color: var(--brand); font-size: 1.6rem; }
+
+    .metric-card strong {
+      display: block;
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      margin-top: 0.4rem;
+    }
+
+    .soft-card {
+      background: #fff;
+      color: var(--dark-text);
+      border-radius: var(--radius);
+      border: 1px solid rgba(19, 32, 51, 0.08);
+      box-shadow: 0 20px 60px rgba(13, 27, 46, 0.08);
+      transition: all 0.25s ease;
+      height: 100%;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 80px rgba(13, 27, 46, 0.14);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 750;
+      color: #1e3658;
+      background: #eef6ff;
+      border: 1px solid #dbeafe;
+      margin: 0.22rem;
+      transition: all 0.22s ease;
+    }
+
+    .pill:hover { transform: translateY(-2px); background: #e0f2fe; }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0.6rem;
+      bottom: 0.6rem;
+      left: 0;
+      width: 2px;
+      background: linear-gradient(var(--brand), var(--brand-2));
+      opacity: 0.55;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.75rem;
+      top: 0.45rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 4px solid var(--brand);
+      box-shadow: 0 0 0 6px rgba(96,165,250,0.15);
+    }
+
+    .experience-card, .project-card {
+      padding: 1.5rem;
+    }
+
+    .role-date {
+      color: #2563eb;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 0.45rem 0.75rem;
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 35%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .project-card:hover::before { opacity: 1; }
+
+    .project-icon {
+      width: 56px;
+      height: 56px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #dbeafe, #dcfce7);
+      color: #0f3d75;
+      font-size: 1.45rem;
+      margin-bottom: 1rem;
+    }
+
+    .link-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      border-radius: 999px;
+      padding: 0.65rem 0.9rem;
+      font-weight: 800;
+      color: #12233c;
+      background: #f4f7fb;
+      border: 1px solid #e5ecf6;
+      margin-right: 0.35rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .link-button:hover { color: #0b61c9; transform: translateY(-2px); }
+
+    .dark-panel {
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,0.20), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(34,197,94,0.13), transparent 28%),
+        #07111f;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      border-radius: 999px;
+      padding: 0.85rem 1.1rem;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      font-weight: 800;
+      margin: 0.35rem;
+    }
+
+    .contact-button:hover { color: #fff; background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.09);
+      color: var(--muted);
+      padding: 30px 0;
+    }
+
+    @media (max-width: 991px) {
+      .hero { padding-top: 112px; text-align: center; }
+      .hero-lead { margin-left: auto; margin-right: auto; }
+      .metric-strip { margin-top: 0; padding-top: 40px; background: var(--light); }
+      .section { padding: 74px 0; }
+    }
+  </style>
 </head>
-
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"> Bharath</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#education">Education</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#skills">Skills</a></li>
-
-
-        <li class="nav-item  active">
-          <a class="nav-link" href="#projects" role="button">
-            Projects
-          </a>
-          <!-- <div class="dropdown-menu"> -->
-          <!-- <a class="dropdown-item" href="#">Web Developement </a>
-            <a class="dropdown-item" href="#">Machine Learning </a>
- -->
-        </li>
-
-        <li class="nav-item active"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item active"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Bharath<span class="text-primary"></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-outline-light rounded-pill px-3" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <section id="hero-education" class="hero-education">
 
-    <!-- Jumbotron -->
-
-    <div class="jumbotron text-center bg-light text-dark mb-0">
-      <img src="Profile.jpeg" alt="Bharath Profile Photo" class="rounded-circle shadow mb-3"
-        style="width:240px; height:240px; object-fit:cover; border:3px solid ;">
-
-      <h1 class="display-4 font-weight-bold">Hi, I'm Bharath 👋</h1>
-
-      <p class="lead mt-3">
-        Front-End Developer | React | Django | JavaScript | Python | Java
-      </p>
-
-      <p class="mt-3">
-        Master’s in Applied Computer Science at
-        <strong>Saint Francis Xavier University</strong>
-      </p>
-
-      <hr class="my-4 bg-light">
-
-      <p>
-        I build responsive, user-friendly web applications with modern
-        technologies like React, Tailwind, Bootstrap, and Django.
-      </p>
-
-      <div class="mt-4">
-        <a class="btn btn-outline-primary btn-lg mb-2 mb-sm-0 mr-sm-2" href="#projects">
-          View Projects
-        </a>
-
-        <a class="btn btn-outline-success btn-lg mb-2 mb-sm-0 mr-sm-2" href="Resume.pdf">
-          Download Resume
-        </a>
-      </div>
-
-    </div>
-
-    <!-- ===================== ABOUT SECTION ===================== -->
-    <div class="bg-white py-5 border-top border-bottom" id="about">
-      <div class="container">
-
-        <div class="row align-items-center">
-
-          <!-- Left Side (Text) -->
-          <div class="col-lg-6 mb-4 mb-lg-0">
-            <h2 class="font-weight-bold mb-3">About Me</h2>
-
-            <p class="text-muted">
-              I’m a developer who enjoys turning ideas into clean, interactive, and user-friendly digital experiences.
-              My focus is on building responsive web applications that are not only functional but also intuitive to
-              use.
+  <main>
+    <section id="home" class="hero position-relative">
+      <div class="container position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 reveal">
+            <span class="hero-badge"><i class="bi bi-lightning-charge-fill text-warning"></i> Full-Stack Developer · React · TypeScript · MERN</span>
+            <h1>Building <span class="gradient-text">modern, scalable</span> web applications.</h1>
+            <p class="hero-lead">
+              I’m Bharath Gopalsamy, a Full-Stack Developer focused on React/TypeScript frontends, Node.js REST APIs, Django systems, authentication, testing, and production-ready deployed applications.
             </p>
-
-            <p class="text-muted">
-              With experience in React, Django, and modern UI frameworks, I love working on real-world problems —
-              from designing smooth interfaces to connecting front-end systems with reliable APIs.
-              I’m always exploring better ways to structure code, improve performance, and build scalable solutions.
-            </p>
-
-            <div class="mt-3">
-              <span class="badge badge-primary mr-2 mb-2 p-2">Problem Solver</span>
-              <span class="badge badge-success mr-2 mb-2 p-2">UI Focused</span>
-              <span class="badge badge-dark mr-2 mb-2 p-2">Full-Stack Mindset</span>
-              <span class="badge badge-info mr-2 mb-2 p-2">Continuous Learner</span>
+            <div class="d-flex flex-wrap gap-2 mt-4 justify-content-center justify-content-lg-start">
+              <a href="#projects" class="btn btn-glow"><i class="bi bi-rocket-takeoff me-2"></i>View Projects</a>
+              <a href="Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener"><i class="bi bi-download me-2"></i>Download Resume</a>
+              <a href="mailto:bharathgopalswamy09@gmail.com" class="btn btn-ghost"><i class="bi bi-envelope me-2"></i>Hire / Contact</a>
             </div>
           </div>
 
-          <!-- Right Side (Highlight Card) -->
-          <div class="col-lg-6">
-            <div class="card shadow-sm border-0">
-              <div class="card-body p-4">
-
-                <h5 class="font-weight-bold mb-3">Quick Snapshot</h5>
-
-                <div class="list-group list-group-flush">
-
-                  <div class="list-group-item d-flex justify-content-between align-items-center">
-                    Primary Focus
-                    <span class="badge badge-light border">Web Development</span>
-                  </div>
-
-                  <div class="list-group-item d-flex justify-content-between align-items-center">
-                    Tech Stack
-                    <span class="badge badge-light border">React • Django • JS</span>
-                  </div>
-
-                  <div class="list-group-item d-flex justify-content-between align-items-center">
-                    Strength
-                    <span class="badge badge-light border">Responsive UI</span>
-                  </div>
-
-                  <div class="list-group-item d-flex justify-content-between align-items-center">
-                    Learning Now
-                    <span class="badge badge-light border">Advanced React and other new tec</span>
-                  </div>
-
-                </div>
-
-                <div class="mt-4 text-center">
-                  <a href="#projects" class="btn btn-outline-primary btn-sm">See My Work</a>
-                </div>
-
+          <div class="col-lg-5 reveal">
+            <div class="glass-card profile-card">
+              <img src="Profile.jpeg" alt="Bharath Gopalsamy profile photo" class="profile-img" />
+              <div class="row g-3 mt-2">
+                <div class="col-6"><div class="stat-box"><div class="stat-number">3+</div><div class="text-white-50 small">Years building</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-number">15+</div><div class="text-white-50 small">Reusable components</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-number">9</div><div class="text-white-50 small">Client-facing pages</div></div></div>
+                <div class="col-6"><div class="stat-box"><div class="stat-number">6</div><div class="text-white-50 small">Test suites</div></div></div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
 
-
-
-
-
-
-    <!-- Education + Slider (same background, same block) -->
-    <div class="edu-section" id="education">
+    <section class="metric-strip section-light">
       <div class="container">
-        <div class="row align-items-center">
+        <div class="row g-3">
+          <div class="col-md-3 reveal"><div class="metric-card"><i class="bi bi-speedometer2"></i><strong>~20%</strong><span class="text-muted-custom">site load-time improvement</span></div></div>
+          <div class="col-md-3 reveal"><div class="metric-card"><i class="bi bi-diagram-3"></i><strong>8+</strong><span class="text-muted-custom">TypeScript React components</span></div></div>
+          <div class="col-md-3 reveal"><div class="metric-card"><i class="bi bi-cloud-check"></i><strong>5+</strong><span class="text-muted-custom">REST endpoints integrated</span></div></div>
+          <div class="col-md-3 reveal"><div class="metric-card"><i class="bi bi-shield-lock"></i><strong>JWT</strong><span class="text-muted-custom">auth + protected routes</span></div></div>
+        </div>
+      </div>
+    </section>
 
-          <!-- LEFT -->
-          <div class="col-lg-4 mb-4 mb-lg-0">
-            <div class="p-4 edu-left-box">
-              <h2 class="font-weight-bold mb-3">Education</h2>
-
-              <p class="text-muted mb-3">
-                My academic journey started with strong fundamentals in Computer Science and evolved into a practical,
-                real-world focus on modern application development. I enjoy learning by building projects and applying
-                what I learn into responsive, user-friendly web applications.
-              </p>
-
-              <div class="p-3 bg-light rounded">
-                <h6 class="font-weight-bold mb-2">Highlights</h6>
-                <ul class="mb-0 text-muted">
-                  <li>Solid foundation in programming & problem solving</li>
-                  <li>Hands-on learning through projects and collaboration</li>
-                  <li>Focused on building clean UI + scalable apps</li>
-                </ul>
+    <section id="about" class="section section-light">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5 reveal">
+            <span class="section-kicker"><i class="bi bi-person-badge"></i> About</span>
+            <h2 class="section-title">Engineer with a product-focused mindset.</h2>
+            <p class="text-muted-custom lead">
+              I build responsive, tested, and scalable web applications across the frontend and backend. My recent work includes MERN healthcare and productivity products, Django appointment systems, NLP analytics dashboards, and CMS-driven university websites.
+            </p>
+          </div>
+          <div class="col-lg-7 reveal">
+            <div class="soft-card p-4 p-lg-5">
+              <h4 class="fw-bold mb-3">What I optimize for</h4>
+              <div class="row g-3">
+                <div class="col-md-6"><div class="p-3 bg-light rounded-4 h-100"><i class="bi bi-window-stack text-primary fs-3"></i><h6 class="fw-bold mt-2">Reusable UI</h6><p class="text-muted-custom mb-0 small">Component-driven React architecture with hooks, Context API, clean state flow, and maintainable patterns.</p></div></div>
+                <div class="col-md-6"><div class="p-3 bg-light rounded-4 h-100"><i class="bi bi-plug text-success fs-3"></i><h6 class="fw-bold mt-2">API Integration</h6><p class="text-muted-custom mb-0 small">REST APIs, auth flows, debouncing, caching, error states, and reliable async user experiences.</p></div></div>
+                <div class="col-md-6"><div class="p-3 bg-light rounded-4 h-100"><i class="bi bi-bug text-danger fs-3"></i><h6 class="fw-bold mt-2">Testing + Debugging</h6><p class="text-muted-custom mb-0 small">Jest, React Testing Library, Chrome DevTools, React Profiler, and systematic production bug fixes.</p></div></div>
+                <div class="col-md-6"><div class="p-3 bg-light rounded-4 h-100"><i class="bi bi-graph-up-arrow text-warning fs-3"></i><h6 class="fw-bold mt-2">Performance</h6><p class="text-muted-custom mb-0 small">Memoization, lazy loading, image optimization, caching, and practical improvements that users can feel.</p></div></div>
               </div>
             </div>
-          </div>  
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- RIGHT -->
-          <div class="col-lg-8">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="6000"
-              data-pause="false">
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <span class="section-kicker"><i class="bi bi-code-slash"></i> Skills</span>
+          <h2 class="section-title">A practical full-stack toolkit.</h2>
+          <p class="section-subtitle">Technologies I use to ship interfaces, APIs, data-driven dashboards, authentication, deployment workflows, and tested production features.</p>
+        </div>
 
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              </ol>
+        <div class="row g-4">
+          <div class="col-lg-6 reveal"><div class="glass-card p-4 h-100"><h4 class="fw-bold mb-3">Frontend</h4><span class="pill">React.js</span><span class="pill">TypeScript</span><span class="pill">Vite</span><span class="pill">React Router</span><span class="pill">Context API</span><span class="pill">Custom Hooks</span><span class="pill">Tailwind CSS</span><span class="pill">Recharts</span><span class="pill">Jest</span><span class="pill">React Testing Library</span></div></div>
+          <div class="col-lg-6 reveal"><div class="glass-card p-4 h-100"><h4 class="fw-bold mb-3">Backend + Data</h4><span class="pill">Node.js</span><span class="pill">Express.js</span><span class="pill">Django</span><span class="pill">Django ORM</span><span class="pill">REST APIs</span><span class="pill">MongoDB Atlas</span><span class="pill">Mongoose</span><span class="pill">MySQL</span><span class="pill">Gemini AI API</span></div></div>
+          <div class="col-lg-6 reveal"><div class="glass-card p-4 h-100"><h4 class="fw-bold mb-3">Auth, Security + Testing</h4><span class="pill">JWT</span><span class="pill">bcrypt</span><span class="pill">OAuth2</span><span class="pill">Session Auth</span><span class="pill">RBAC</span><span class="pill">Protected Routes</span><span class="pill">Middleware</span><span class="pill">Postman</span></div></div>
+          <div class="col-lg-6 reveal"><div class="glass-card p-4 h-100"><h4 class="fw-bold mb-3">Tools + Workflow</h4><span class="pill">Git</span><span class="pill">GitHub</span><span class="pill">Chrome DevTools</span><span class="pill">Figma</span><span class="pill">Vercel</span><span class="pill">Render</span><span class="pill">Agile/Scrum</span><span class="pill">Squarespace</span></div></div>
+        </div>
+      </div>
+    </section>
 
-              <div class="carousel-inner">
+    <section id="experience" class="section section-light">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <span class="section-kicker"><i class="bi bi-briefcase"></i> Experience</span>
+          <h2 class="section-title">Impact-focused development experience.</h2>
+          <p class="section-subtitle">Real production work across university web operations, startup product teams, dashboards, reusable components, and responsive interfaces.</p>
+        </div>
 
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                  <div class="slide-wrap px-3 py-4">
-                    <div class="card edu-card mx-auto">
-                      <div class="card-body p-4 p-md-5 text-center">
-                        <span class="badge badge-primary badge-pillish mb-3">2024 – 2026</span>
-
-                        <h3 class="font-weight-bold mb-2">Master of Applied Computer Science</h3>
-                        <p class="text-muted mb-3">
-                          Saint Francis Xavier University - Antigonish, Nova Scotia, Canada
-                        </p>
-
-                        <p class="mb-4">
-                          Focused on applying computer science to real-world software development and strengthening my
-                          ability to design and build modern applications.
-                        </p>
-
-                        <div class="row text-left">
-                          <div class="col-md-6 mb-3 mb-md-0">
-                            <div class="p-3 bg-light rounded">
-                              <h6 class="font-weight-bold mb-2">Focus Areas</h6>
-                              <ul class="mb-0">
-                                <li>Project-based development</li>
-                                <li>Team collaboration & workflows</li>
-                                <li>Scalable, user-friendly apps</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="p-3 bg-light rounded">
-                              <h6 class="font-weight-bold mb-2">Outcome</h6>
-                              <ul class="mb-0">
-                                <li>Stronger system thinking</li>
-                                <li>Better coding practices</li>
-                                <li>Industry-ready skills</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                  <div class="slide-wrap px-3 py-4">
-                    <div class="card edu-card mx-auto">
-                      <div class="card-body p-4 p-md-5 text-center">
-                        <span class="badge badge-dark badge-pillish mb-3">2020 – 2024</span>
-
-                        <h3 class="font-weight-bold mb-2">Bachelor of Engineering in Computer Science</h3>
-                        <p class="text-muted mb-3">
-                          Anna University - SRM Valliammai Engineering College, Chennai, India
-                        </p>
-
-                        <p class="mb-4">
-                          Built strong foundations in programming, problem solving, and core computer science concepts,
-                          while developing interest in web development and building real applications.
-                        </p>
-
-                        <div class="row text-left">
-                          <div class="col-md-6 mb-3 mb-md-0">
-                            <div class="p-3 bg-light rounded">
-                              <h6 class="font-weight-bold mb-2">Core Strengths</h6>
-                              <ul class="mb-0">
-                                <li>Programming fundamentals</li>
-                                <li>Data structures & algorithms</li>
-                                <li>Software engineering basics</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="p-3 bg-light rounded">
-                              <h6 class="font-weight-bold mb-2">What I gained</h6>
-                              <ul class="mb-0">
-                                <li>Confidence building projects</li>
-                                <li>Strong learning foundation</li>
-                                <li>Consistency & discipline</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="soft-card experience-card">
+              <div class="d-flex justify-content-between flex-wrap gap-2 mb-2"><div><h4 class="fw-bold mb-1">Website Coordinator</h4><p class="text-muted-custom mb-0">St. Francis Xavier University Students’ Union · Antigonish, NS</p></div><span class="role-date">Aug 2025 – Present</span></div>
+              <p class="text-muted-custom mb-2">Maintaining a university website serving 5,000+ active students; improved performance, reliability, and publishing workflows.</p>
+              <ul class="text-muted-custom mb-3">
+                <li>Applied browser caching, image compression, and lazy loading to reduce average page load time by ~20%.</li>
+                <li>Resolved 12+ navigation, broken-link, and layout bugs through DOM/CSS audits.</li>
+                <li>Created a structured content workflow across 3 departments, reducing updates to same-day delivery.</li>
+              </ul>
+              <span class="pill">Squarespace</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Chrome DevTools</span>
             </div>
           </div>
 
+          <div class="timeline-item reveal">
+            <div class="soft-card experience-card">
+              <div class="d-flex justify-content-between flex-wrap gap-2 mb-2"><div><h4 class="fw-bold mb-1">Front-End Developer Intern</h4><p class="text-muted-custom mb-0">FirstLanguage Technologies · Chennai, India</p></div><span class="role-date">Aug 2023 – Jul 2024</span></div>
+              <p class="text-muted-custom mb-2">Built React/TypeScript UI components and API-powered NLP analytics dashboards in Agile sprint cycles.</p>
+              <ul class="text-muted-custom mb-3">
+                <li>Engineered 8+ reusable React components using custom hooks and Context API, reducing unnecessary re-renders by ~30%.</li>
+                <li>Integrated 5+ REST endpoints and improved UI responsiveness by ~15% using debouncing and client-side caching.</li>
+                <li>Debugged shared state synchronization issues and extracted reusable hooks for better data consistency.</li>
+              </ul>
+              <span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">REST APIs</span><span class="pill">Tailwind</span><span class="pill">Postman</span>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="soft-card experience-card">
+              <div class="d-flex justify-content-between flex-wrap gap-2 mb-2"><div><h4 class="fw-bold mb-1">React Developer Intern</h4><p class="text-muted-custom mb-0">Across the Globe · Bangalore, India</p></div><span class="role-date">May 2023 – Nov 2023</span></div>
+              <p class="text-muted-custom mb-2">Delivered production React components, responsive layouts, API integrations, and performance fixes.</p>
+              <ul class="text-muted-custom mb-3">
+                <li>Built 15+ reusable components including data tables, modals, and forms, reducing duplicated UI code by ~40%.</li>
+                <li>Used React DevTools Profiler to cut average render time by ~20% across 6 components.</li>
+                <li>Delivered 5 features from Figma wireframes to production React code.</li>
+              </ul>
+              <span class="pill">React</span><span class="pill">JavaScript</span><span class="pill">CSS</span><span class="pill">Git</span><span class="pill">Figma</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="text-center mb-5 reveal">
+          <span class="section-kicker"><i class="bi bi-stars"></i> Featured Projects</span>
+          <h2 class="section-title">Products with architecture, auth, AI, and measurable UX.</h2>
+          <p class="section-subtitle">A focused set of full-stack projects that show practical product thinking, API design, testing, deployment, healthcare workflows, and AI integration.</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 reveal">
+            <div class="soft-card project-card">
+              <div class="project-icon"><i class="bi bi-heart-pulse"></i></div>
+              <h4 class="fw-bold">DermaCure AI</h4>
+              <p class="text-muted-custom">AI-powered skin screening and dermatologist booking platform with browser-side TensorFlow.js analysis and role-separated access.</p>
+              <ul class="text-muted-custom small">
+                <li>Full MERN platform with 9 client-facing pages.</li>
+                <li>JWT auth, bcrypt credentials, protected API routes, patient/doctor/admin roles.</li>
+                <li>Sub-2-second upload analysis through model warm-up and image preprocessing.</li>
+                <li>Jest + RTL tests for auth redirects and async UI flows.</li>
+              </ul>
+              <div class="mb-3"><span class="pill">React/Vite</span><span class="pill">Node</span><span class="pill">MongoDB</span><span class="pill">TensorFlow.js</span><span class="pill">JWT</span></div>
+              <a class="link-button" href="https://derma-ai-psi.vercel.app" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+              <a class="link-button" href="https://github.com/bharathgopalswamy/DermaAI" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal">
+            <div class="soft-card project-card">
+              <div class="project-icon"><i class="bi bi-calendar2-check"></i></div>
+              <h4 class="fw-bold">HabitIQ</h4>
+              <p class="text-muted-custom">AI-powered habit tracking SaaS platform with analytics dashboards, Gemini AI routine generation, and real-time UI state.</p>
+              <ul class="text-muted-custom small">
+                <li>TypeScript MERN SaaS with Context API for global habit/auth state.</li>
+                <li>Gemini AI backend pipeline: controller → prompt → parsed response → MongoDB persistence.</li>
+                <li>Recharts analytics dashboard with completion rates, focus scores, and consistency insights.</li>
+                <li>Tested streak logic, habit creation, and mocked AI responses.</li>
+              </ul>
+              <div class="mb-3"><span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">Gemini API</span><span class="pill">Recharts</span><span class="pill">JWT</span></div>
+              <a class="link-button" href="https://habitiq-blond.vercel.app/dashboard" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>
+              <a class="link-button" href="https://github.com/bharathgopalswamy/smart-ai-habit-tracker" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 reveal">
+            <div class="soft-card project-card">
+              <div class="project-icon"><i class="bi bi-hospital"></i></div>
+              <h4 class="fw-bold">MedCare</h4>
+              <p class="text-muted-custom">Healthcare appointment management system with Django, Google Calendar API sync, OAuth2, and conflict-safe scheduling.</p>
+              <ul class="text-muted-custom small">
+                <li>Django CBVs and ORM with normalized MySQL schema across patients, doctors, and appointments.</li>
+                <li>OAuth2 Google Calendar sync for patient and doctor calendars.</li>
+                <li>Slot conflict detection prevents double-bookings.</li>
+                <li>Server-side validation and permission decorators secure core flows.</li>
+              </ul>
+              <div class="mb-3"><span class="pill">Django</span><span class="pill">MySQL</span><span class="pill">OAuth2</span><span class="pill">Google Calendar API</span><span class="pill">JavaScript</span></div>
+              <a class="link-button" href="https://github.com/bharathgopalswamy/DoctorPatient" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section section-light">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-6 reveal">
+            <div class="soft-card p-4 p-lg-5">
+              <span class="section-kicker"><i class="bi bi-mortarboard"></i> Education</span>
+              <h3 class="fw-bold display-6">Master of Applied Computer Science</h3>
+              <p class="text-muted-custom mb-1">Saint Francis Xavier University · Antigonish, NS, Canada</p>
+              <p class="role-date d-inline-block my-3">Sept 2024 – May 2026</p>
+              <p class="text-muted-custom">Relevant Coursework: Data Structures & Algorithms, Big Data, Machine Learning, Computer & Network Security, Embedded Systems.</p>
+              <p class="mb-0"><strong>Graduate Average:</strong> 82% · Approx. 3.7/4.0 GPA equivalent</p>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="soft-card p-4 p-lg-5">
+              <span class="section-kicker"><i class="bi bi-award"></i> Education</span>
+              <h3 class="fw-bold display-6">B.E. Computer Science</h3>
+              <p class="text-muted-custom mb-1">SRM Valliammai Engineering College, Anna University · Chennai, India</p>
+              <p class="role-date d-inline-block my-3">Aug 2020 – May 2024</p>
+              <p class="text-muted-custom">Built strong foundations in programming, software engineering, databases, data structures, and applied project development.</p>
+              <p class="mb-0"><strong>CGPA:</strong> 9.07/10</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="soft-card p-4 p-lg-5 mt-4 reveal">
+          <h4 class="fw-bold mb-3">Certifications</h4>
+          <div class="row g-3">
+            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> Meta Front-End Developer Professional Certificate — Coursera (2026)</span></div>
+            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> Meta Programming with JavaScript — Coursera (2026)</span></div>
+            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> Python for Data Science & AI Development — IBM (2023)</span></div>
+            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> React.js Essential Training & REST APIs — LinkedIn Learning (2023)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="dark-panel p-4 p-lg-5 text-center reveal">
+          <span class="section-kicker"><i class="bi bi-send"></i> Contact</span>
+          <h2 class="section-title">Open to full-stack and front-end roles.</h2>
+          <p class="section-subtitle mb-4">I’m available for full-time, internship, and collaboration opportunities where I can build polished interfaces, reliable APIs, and useful products.</p>
+          <div class="mb-4">
+            <a class="contact-button" href="https://bharathgopalsamy.vercel.app" target="_blank" rel="noopener"><i class="bi bi-globe2"></i> Portfolio</a>
+            <a class="contact-button" href="https://linkedin.com/in/bharathgopalsamy" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a class="contact-button" href="https://github.com/bharathgopalswamy" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+            <a class="contact-button" href="mailto:bharathgopalswamy09@gmail.com"><i class="bi bi-envelope-fill"></i> Email</a>
+          </div>
+          <a href="Resume.pdf" class="btn btn-glow" target="_blank" rel="noopener"><i class="bi bi-download me-2"></i>Download Resume</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span>© <span id="year"></span> Bharath Gopalsamy. Built with HTML, Bootstrap, and thoughtful UX.</span>
+      <span>React · TypeScript · Node.js · Django · MERN</span>
     </div>
+  </footer>
 
-  </section>
-
-
-  <!-- ===================== EXPERIENCE ===================== -->
-  <section id="experience" class="py-5 bg-white">
-    <div class="container">
-
-      <!-- Header -->
-      <div class="text-center mb-4">
-        <h2 class="font-weight-bold mb-2">Experience</h2>
-        <p class="text-muted mb-0">
-          Work + internships where I shipped real UI, maintained websites, and built production - ready components.
-        </p>
-      </div>
-
-      <div class="row">
-
-        <!-- LEFT: Experience Accordion -->
-        <div class="col-lg-8 mb-4 mb-lg-0">
-
-          <div id="expAccordion">
-
-            <!-- Experience 1 -->
-            <div class="card shadow-sm border-0 mb-3">
-              <div class="card-body">
-
-                <div class="media">
-                  <div class="mr-3">
-                    <span class="badge badge-success p-3">WC</span>
-                  </div>
-
-                  <div class="media-body">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h5 class="font-weight-bold mb-1">Website Coordinator</h5>
-                        <p class="text-muted mb-2">St. Francis Xavier University Students’ Union • Antigonish, NS</p>
-                      </div>
-                      <span class="badge badge-success px-3 py-2">Aug 2025 – Present</span>
-                    </div>
-
-                    <div class="mb-2">
-                      <span class="badge badge-light border mr-2 mb-2">Squarespace</span>
-                      <span class="badge badge-light border mr-2 mb-2">Content Updates</span>
-                      <span class="badge badge-light border mr-2 mb-2">Accessibility</span>
-                      <span class="badge badge-light border mb-2">Responsive Design</span>
-                    </div>
-
-                    <p class="text-muted mb-2">
-                      Managing and improving the Students’ Union website experience - content, navigation, and
-                      performance.
-                    </p>
-
-                    <a class="btn btn-link btn-sm px-0" data-toggle="collapse" href="#exp1" role="button"
-                      aria-expanded="false" aria-controls="exp1">
-                      View responsibilities
-                    </a>
-
-                    <div class="collapse mt-2" id="exp1" data-parent="#expAccordion">
-                      <ul class="text-muted small pl-3 mb-0">
-                        <li>Maintain and update the Students’ Union website using Squarespace CMS (pages, navigation,
-                          events, announcements, and resources).</li>
-                        <li>Publish timely updates for student services, elections, orientation, and campus events while
-                          ensuring consistency across sections.</li>
-                        <li>Improve the overall user experience by refining layouts, simplifying navigation paths, and
-                          optimizing content structure for readability.</li>
-                        <li>Ensure the site remains responsive across devices (mobile/tablet/desktop) and verify layouts
-                          after updates.</li>
-                        <li>Coordinate with internal teams to collect accurate information, update content quickly, and
-                          keep the website aligned with student needs.</li>
-                        <li>Perform regular checks for broken links, outdated content, and formatting issues to keep the
-                          site clean and professional.</li>
-                      </ul>
-                    </div>
-
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Experience 2 -->
-            <div class="card shadow-sm border-0 mb-3">
-              <div class="card-body">
-
-                <div class="media">
-                  <div class="mr-3">
-                    <span class="badge badge-primary p-3">FE</span>
-                  </div>
-
-                  <div class="media-body">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h5 class="font-weight-bold mb-1">Front-End Developer</h5>
-                        <p class="text-muted mb-2">First Language Technologies • Chennai, India</p>
-                      </div>
-                      <span class="badge badge-primary px-3 py-2">Aug 2023 – Jul 2024</span>
-                    </div>
-
-                    <div class="mb-2">
-                      <span class="badge badge-light border mr-2 mb-2">Responsive UI</span>
-                      <span class="badge badge-light border mr-2 mb-2">API Integration</span>
-                      <span class="badge badge-light border mr-2 mb-2">Startup Products</span>
-                      <span class="badge badge-light border mb-2">UI Components</span>
-                    </div>
-
-                    <p class="text-muted mb-2">
-                      Worked on company website improvements and startup products with real-time user flows.
-                    </p>
-
-                    <a class="btn btn-link btn-sm px-0" data-toggle="collapse" href="#exp2" role="button"
-                      aria-expanded="false" aria-controls="exp2">
-                      What I built
-                    </a>
-
-                    <div class="collapse mt-2" id="exp2" data-parent="#expAccordion">
-                      <ul class="text-muted small pl-3 mb-0">
-                        <li>Improved the company website UI by enhancing responsiveness, page structure, and interactive
-                          components for a smoother user experience.</li>
-                        <li>Worked closely with product requirements and design references to translate ideas into
-                          clean, usable UI with consistent styling.</li>
-                        <li><strong>DocZen:</strong> built user-friendly interfaces and connected APIs for real-time
-                          document querying and result rendering.</li>
-                        <li>Handled dynamic UI states such as loading, error handling, and conditional rendering to
-                          improve reliability during API calls.</li>
-                        <li><strong>MeetingPro:</strong> designed and implemented UI screens for real-time transcription
-                          and live updates during meetings.</li>
-                        <li>Focused on reusable component structure so features can scale easily across pages and
-                          modules.</li>
-                        <li>Performed debugging and UI refinements to improve stability, visual consistency, and
-                          cross-device behavior.</li>
-                      </ul>
-                    </div>
-
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Experience 3 -->
-            <div class="card shadow-sm border-0 mb-3">
-              <div class="card-body">
-
-                <div class="media">
-                  <div class="mr-3">
-                    <span class="badge badge-info p-3">RJ</span>
-                  </div>
-
-                  <div class="media-body">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h5 class="font-weight-bold mb-1">ReactJS Developer</h5>
-                        <p class="text-muted mb-2">Across The Globe • Bangalore, India</p>
-                      </div>
-                      <span class="badge badge-info px-3 py-2">May 2023 – Nov 2023</span>
-                    </div>
-
-                    <div class="mb-2">
-                      <span class="badge badge-light border mr-2 mb-2">React</span>
-                      <span class="badge badge-light border mr-2 mb-2">TypeScript</span> <!-- ADD -->
-                      <span class="badge badge-light border mr-2 mb-2">Reusable Components</span>
-                      <span class="badge badge-light border mr-2 mb-2">Jest</span>
-                      <span class="badge badge-light border mb-2">Bug Fixing</span>
-                    </div>
-
-
-                    <p class="text-muted mb-2">
-                      Built modular React components, fixed bugs, and supported stable deployments.
-                    </p>
-
-                    <a class="btn btn-link btn-sm px-0" data-toggle="collapse" href="#exp3" role="button"
-                      aria-expanded="false" aria-controls="exp3">
-                      Key contributions
-                    </a>
-
-                    <div class="collapse mt-2" id="exp3" data-parent="#expAccordion">
-                      <ul class="text-muted small pl-3 mb-0">
-                        <li>Developed modular and reusable React components to improve code maintainability and UI
-                          consistency across the application.</li>
-                        <li>Implemented responsive layouts and ensured UI behavior remained stable across common screen
-                          sizes and browsers.</li>
-                        <li>Fixed UI bugs and improved component performance by optimizing rendering patterns and
-                          cleaning up component logic.</li>
-                        <li>Collaborated with developers to integrate UI changes with backend APIs and ensure correct
-                          data display and flows.</li>
-                        <li>Wrote and supported component-level testing using Jest to validate UI behavior and prevent
-                          regressions.</li>
-                        <li>Followed structured development practices for clean commits, readable code, and reliable
-                          feature delivery.</li>
-                      </ul>
-                    </div>
-
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Experience 4 -->
-            <div class="card shadow-sm border-0">
-              <div class="card-body">
-
-                <div class="media">
-                  <div class="mr-3">
-                    <span class="badge badge-dark p-3">TW</span>
-                  </div>
-
-                  <div class="media-body">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h5 class="font-weight-bold mb-1">Technical Content Writer</h5>
-                        <p class="text-muted mb-2">Uptal • Bangalore, India</p>
-                      </div>
-                      <span class="badge badge-dark px-3 py-2">Feb 2022 – Jun 2022</span>
-                    </div>
-
-                    <div class="mb-2">
-                      <span class="badge badge-light border mr-2 mb-2">Notion</span>
-                      <span class="badge badge-light border mr-2 mb-2">Technical Writing</span>
-                      <span class="badge badge-light border mb-2">Collaboration</span>
-                    </div>
-
-                    <p class="text-muted mb-2">
-                      Wrote and published developer-friendly content with clarity and technical accuracy.
-                    </p>
-
-                    <a class="btn btn-link btn-sm px-0" data-toggle="collapse" href="#exp4" role="button"
-                      aria-expanded="false" aria-controls="exp4">
-                      What I did
-                    </a>
-
-                    <div class="collapse mt-2" id="exp4" data-parent="#expAccordion">
-                      <ul class="text-muted small pl-3 mb-0">
-                        <li>Created technical articles focused on programming concepts, problem-solving, and
-                          developer-friendly explanations.</li>
-                        <li>Converted complex topics into step-by-step content with clear structure, examples, and
-                          easy-to-follow flow.</li>
-                        <li>Planned content schedules and drafts using Notion for organized writing, editing, and
-                          revisions.</li>
-                        <li>Worked with the development team to validate technical accuracy and ensure examples matched
-                          real-world standards.</li>
-                        <li>Improved writing quality by refining clarity, grammar, and formatting to make content more
-                          professional and readable.</li>
-                      </ul>
-                    </div>
-
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- RIGHT: Summary Card -->
-        <div class="col-lg-4">
-          <div class="card shadow-sm border-0">
-            <div class="card-body">
-
-              <h5 class="font-weight-bold mb-3">What I bring</h5>
-
-              <div class="list-group mb-3">
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                  Responsive UI building
-                  <span class="badge badge-light border">Strong</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                  Real-time product flows
-                  <span class="badge badge-light border">Hands-on</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                  CMS + site maintenance
-                  <span class="badge badge-light border">Work</span>
-                </div>
-                <div class="list-group-item d-flex justify-content-between align-items-center">
-                  Debugging + testing mindset
-                  <span class="badge badge-light border">Reliable</span>
-                </div>
-              </div>
-
-              <a class="btn btn-outline-success btn-block" href="Resume.pdf" target="_blank">
-                Download Resume
-              </a>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <section id="skills" class="py-5 bg-light">
-    <div class="container">
-
-      <!-- Header -->
-      <div class="text-center mb-4">
-        <h2 class="font-weight-bold mb-2">Skills</h2>
-        <p class="text-muted mb-0">
-          My toolkit for building responsive, user-friendly web applications - from UI to APIs and CMS.
-        </p>
-      </div>
-
-      <div class="row">
-
-        <!-- LEFT: Skill groups (cards) -->
-        <div class="col-lg-7 mb-4 mb-lg-0">
-          <div class="row">
-
-            <!-- Front-End -->
-            <div class="col-md-6 mb-3">
-              <div class="card shadow-sm h-100 border-0">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="badge badge-primary mr-2 px-3 py-2">FE</span>
-                    <h5 class="mb-0 font-weight-bold">Front-End</h5>
-                  </div>
-
-                  <div class="d-flex flex-wrap">
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">React</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">TypeScript</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">JavaScript</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">HTML5</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">CSS3</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Bootstrap</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Tailwind</span>
-                  </div>
-
-                  <p class="text-muted mt-2 mb-0">
-                    I build reusable UI components, responsive layouts, and smooth user experiences.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Back-End -->
-            <div class="col-md-6 mb-3">
-              <div class="card shadow-sm h-100 border-0">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="badge badge-success mr-2 px-3 py-2">BE</span>
-                    <h5 class="mb-0 font-weight-bold">Back-End</h5>
-                  </div>
-
-                  <div class="d-flex flex-wrap">
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Django</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">REST APIs</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Python</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">CRUD</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Auth</span>
-                  </div>
-
-                  <p class="text-muted mt-2 mb-0">
-                    I connect front-end to APIs and build practical full-stack projects.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Tools -->
-            <div class="col-md-6 mb-3">
-              <div class="card shadow-sm h-100 border-0">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="badge badge-dark mr-2 px-3 py-2">DV</span>
-                    <h5 class="mb-0 font-weight-bold">Dev Tools</h5>
-                  </div>
-
-                  <div class="d-flex flex-wrap">
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Git / GitHub</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">VS Code</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Debugging</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Responsive Design</span>
-                  </div>
-
-                  <p class="text-muted mt-2 mb-0">
-                    Clean structure, consistent commits, and reliable debugging workflows.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- UI/UX + CMS -->
-            <div class="col-md-6 mb-3">
-              <div class="card shadow-sm h-100 border-0">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-2">
-                    <span class="badge badge-warning mr-2 px-3 py-2">UX</span>
-                    <h5 class="mb-0 font-weight-bold">UI/UX + CMS</h5>
-                  </div>
-
-                  <div class="d-flex flex-wrap">
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Figma</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Wireframes</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">Squarespace</span>
-                    <span class="badge badge-light border mr-2 mb-2 px-3 py-2">WordPress</span>
-                  </div>
-
-                  <p class="text-muted mt-2 mb-0">
-                    I care about usability and maintain real websites using CMS platforms.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- RIGHT: Strength snapshot (progress + accordion) -->
-        <div class="col-lg-5">
-          <div class="card shadow-sm border-0">
-            <div class="card-body">
-
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5 class="font-weight-bold mb-0">Strength Snapshot</h5>
-                <span class="text-muted small">based on projects + work</span>
-              </div>
-
-              <!-- Progress Bars -->
-              <div class="mb-3">
-                <div class="d-flex justify-content-between">
-                  <span class="font-weight-bold">React & UI Components</span>
-                  <span class="text-muted small">Advanced</span>
-                </div>
-                <div class="progress" style="height:10px;">
-                  <div class="progress-bar bg-primary" style="width:88%"></div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <div class="d-flex justify-content-between">
-                  <span class="font-weight-bold">TypeScript (React Apps)</span>
-                  <span class="text-muted small">Strong</span>
-                </div>
-                <div class="progress" style="height:10px;">
-                  <div class="progress-bar bg-secondary" style="width:80%"></div>
-                </div>
-              </div>
-
-
-              <div class="mb-3">
-                <div class="d-flex justify-content-between">
-                  <span class="font-weight-bold">JavaScript</span>
-                  <span class="text-muted small">Advanced</span>
-                </div>
-                <div class="progress" style="height:10px;">
-                  <div class="progress-bar bg-info" style="width:84%"></div>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <div class="d-flex justify-content-between">
-                  <span class="font-weight-bold">Bootstrap / Tailwind</span>
-                  <span class="text-muted small">Advanced</span>
-                </div>
-                <div class="progress" style="height:10px;">
-                  <div class="progress-bar bg-success" style="width:86%"></div>
-                </div>
-              </div>
-
-              <div class="mb-4">
-                <div class="d-flex justify-content-between">
-                  <span class="font-weight-bold">Django + REST APIs</span>
-                  <span class="text-muted small">Intermediate</span>
-                </div>
-
-                <div class="progress" style="height:10px;">
-                  <div class="progress-bar bg-dark" style="width:72%"></div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <div class="d-flex justify-content-between">
-                  <span class="font-weight-bold">Python</span>
-                  <span class="text-muted small">Intermediate</span>
-                </div>
-                <div class="progress" style="height:10px;">
-                  <div class="progress-bar bg-warning" style="width:75%"></div>
-                </div>
-
-                <!-- Accordion (innovative + clean) -->
-                <div id="skillsAccordion">
-
-                  <div class="card border-0">
-                    <div class="card-header bg-white p-0 border-0" id="headingOne">
-                      <button class="btn btn-link btn-block text-left font-weight-bold px-0" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="true">
-                        What I focus on while building
-                      </button>
-                    </div>
-
-                    <div id="collapseOne" class="collapse show" data-parent="#skillsAccordion">
-                      <div class="card-body px-0 pt-2 text-muted">
-                        Clean UI structure, reusable components, responsive design, and smooth API-driven user flows.
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card border-0">
-                    <div class="card-header bg-white p-0 border-0" id="headingTwo">
-                      <button class="btn btn-link btn-block text-left font-weight-bold px-0 collapsed"
-                        data-toggle="collapse" data-target="#collapseTwo">
-                        CMS experience (work)
-                      </button>
-                    </div>
-
-                    <div id="collapseTwo" class="collapse" data-parent="#skillsAccordion">
-                      <div class="card-body px-0 pt-2 text-muted">
-                        Updating content, improving navigation, and maintaining live sites using Squarespace and
-                        WordPress.
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card border-0">
-                    <div class="card-header bg-white p-0 border-0" id="headingThree">
-                      <button class="btn btn-link btn-block text-left font-weight-bold px-0 collapsed"
-                        data-toggle="collapse" data-target="#collapseThree">
-                        What I’m improving next
-                      </button>
-                    </div>
-
-                    <div id="collapseThree" class="collapse" data-parent="#skillsAccordion">
-                      <div class="card-body px-0 pt-2 text-muted">
-                        Advanced React patterns, performance optimization, cleaner architecture, and production-ready
-                        deployment workflows.
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-  </section>
-
-
-
-
-  <section id="projects" class="py-5 bg-white">
-    <div class="container">
-
-      <!-- Header -->
-      <div class="text-center mb-4">
-        <h2 class="font-weight-bold mb-2">Projects</h2>
-        <p class="text-muted mb-0">
-          A mix of Web Development and Machine Learning projects where I built real solutions - from UI + APIs to model
-          evaluation.
-        </p>
-      </div>
-
-      <!-- Tabs -->
-      <ul class="nav nav-pills justify-content-center mb-4" id="projectsTabs" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active font-weight-bold" id="web-tab" data-toggle="pill" href="#web-pane" role="tab">
-            Web Development
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link font-weight-bold" id="ml-tab" data-toggle="pill" href="#ml-pane" role="tab">
-            Machine Learning
-          </a>
-        </li>
-      </ul>
-
-      <div class="tab-content" id="projectsTabsContent">
-
-        <!-- ========================= WEB PROJECTS TAB ========================= -->
-        <div class="tab-pane fade show active" id="web-pane" role="tabpanel">
-
-          <div id="webProjectsCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000"
-            data-pause="hover">
-
-            <ol class="carousel-indicators">
-              <li data-target="#webProjectsCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#webProjectsCarousel" data-slide-to="1"></li>
-              <li data-target="#webProjectsCarousel" data-slide-to="2"></li>
-            </ol>
-
-            <div class="carousel-inner">
-
-              <!-- Slide 1: MedCare -->
-              <div class="carousel-item active">
-                <div class="card shadow-sm border-0">
-                  <div class="card-body p-4">
-
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h4 class="font-weight-bold mb-1">MedCare – Doctor Appointment System</h4>
-                        <p class="text-muted mb-2">Django • Google Calendar API • HTML/CSS • JavaScript</p>
-                      </div>
-                      <span class="badge badge-primary px-3 py-2">Full Stack</span>
-                    </div>
-
-                    <div class="mb-3">
-                      <span class="badge badge-light border mr-2 mb-2">Django</span>
-                      <span class="badge badge-light border mr-2 mb-2">Google Calendar API</span>
-                      <span class="badge badge-light border mr-2 mb-2">Role-Based Auth</span>
-                      <span class="badge badge-light border mb-2">Healthcare App</span>
-                    </div>
-
-                    <p class="text-muted mb-3">
-                      Built a full-stack healthcare appointment platform where patients can book appointments,
-                      doctors can manage schedules, and the system keeps everything synced with Google Calendar.
-                      Focused on clean workflows, usability, and real-world scheduling logic.
-                    </p>
-
-                    <div class="d-flex flex-wrap align-items-center mb-2">
-                      <!-- ✅ Replace # with your real repo -->
-                      <a href="https://github.com/bharathgopalswamy/DoctorPatient" target="_blank"
-                        class="btn btn-outline-dark btn-sm mr-2 mb-2">
-                        <i class="bi bi-github"></i> GitHub
-                      </a>
-                      <!-- optional -->
-                      <a href="#" target="_blank" class="btn btn-outline-primary btn-sm mr-2 mb-2">
-                        Live Demo
-                      </a>
-
-                      <a class="btn btn-link btn-sm px-0 mb-2" data-toggle="collapse" href="#webDetails1" role="button"
-                        aria-expanded="false" aria-controls="webDetails1">
-                        Key Highlights
-                      </a>
-                    </div>
-
-                    <div class="collapse" id="webDetails1">
-                      <div class="card card-body border-0 bg-light">
-                        <ul class="text-muted small mb-0 pl-3">
-                          <li><b>Role-based login:</b> Separate dashboards for doctors and patients.</li>
-                          <li><b>Appointment workflow:</b> Booking, rescheduling, cancellations, and viewing schedules.
-                          </li>
-                          <li><b>Google Calendar sync:</b> Automatically pushes appointment events + updates.</li>
-                          <li><b>Communication:</b> Included patient–doctor interaction + information flow.</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2: FirstLanguage -->
-              <div class="carousel-item">
-                <div class="card shadow-sm border-0">
-                  <div class="card-body p-4">
-
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h4 class="font-weight-bold mb-1">FirstLanguage – Landing Page</h4>
-                        <p class="text-muted mb-2">React • Tailwind CSS • Figma</p>
-                      </div>
-                      <span class="badge badge-dark px-3 py-2">Frontend</span>
-                    </div>
-
-                    <div class="mb-3">
-                      <span class="badge badge-light border mr-2 mb-2">React</span>
-                      <span class="badge badge-light border mr-2 mb-2">Tailwind</span>
-                      <span class="badge badge-light border mr-2 mb-2">Figma → UI</span>
-                      <span class="badge badge-light border mb-2">Responsive Design</span>
-                    </div>
-
-                    <p class="text-muted mb-3">
-                      Created a clean, modern landing page by translating Figma designs into pixel-perfect UI.
-                      Focused on responsive layout, reusable components, smooth scrolling sections, and fast rendering.
-                    </p>
-
-                    <div class="d-flex flex-wrap align-items-center mb-2">
-                      <a href="https://github.com/bharathgopalswamy/FirstLanguage" target="_blank"
-                        class="btn btn-outline-dark btn-sm mr-2 mb-2">
-                        <i class="bi bi-github"></i> GitHub
-                      </a>
-                      <a href="https://www.firstlanguage.ai" target="_blank"
-                        class="btn btn-outline-primary btn-sm mr-2 mb-2">
-                        Live Demo
-                      </a>
-
-                      <a class="btn btn-link btn-sm px-0 mb-2" data-toggle="collapse" href="#webDetails2" role="button"
-                        aria-expanded="false" aria-controls="webDetails2">
-                        Key Highlights
-                      </a>
-                    </div>
-
-                    <div class="collapse" id="webDetails2">
-                      <div class="card card-body border-0 bg-light">
-                        <ul class="text-muted small mb-0 pl-3">
-                          <li><b>Pixel-perfect UI:</b> Converted Figma sections into responsive React layout.</li>
-                          <li><b>Reusable components:</b> Structured sections for scalability.</li>
-                          <li><b>Performance:</b> Clean CSS utility usage + minimal DOM complexity.</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 3: CRA -->
-              <div class="carousel-item">
-                <div class="card shadow-sm border-0">
-                  <div class="card-body p-4">
-
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h4 class="font-weight-bold mb-1">React Web Application (CRA Project)</h4>
-                        <p class="text-muted mb-2">React • Create React App • JavaScript • CSS</p>
-                      </div>
-                      <span class="badge badge-info px-3 py-2">Frontend</span>
-                    </div>
-
-                    <div class="mb-3">
-                      <span class="badge badge-light border mr-2 mb-2">Component Architecture</span>
-                      <span class="badge badge-light border mr-2 mb-2">State Handling</span>
-                      <span class="badge badge-light border mr-2 mb-2">Build Workflow</span>
-                      <span class="badge badge-light border mb-2">Responsive UI</span>
-                    </div>
-
-                    <p class="text-muted mb-3">
-                      Built a React application bootstrapped with Create React App to strengthen core frontend concepts:
-                      component-based structure, UI updates, layout responsiveness, and production build workflow.
-                    </p>
-
-                    <div class="d-flex flex-wrap align-items-center mb-2">
-                      <a href="https://github.com/banao-tech/Seven-Imagine_Evallo_FE" target="_blank"
-                        class="btn btn-outline-dark btn-sm mr-2 mb-2">
-                        <i class="bi bi-github"></i> GitHub
-                      </a>
-                      <a href="#" target="_blank" class="btn btn-outline-primary btn-sm mr-2 mb-2">
-                        Live Demo
-                      </a>
-
-                      <a class="btn btn-link btn-sm px-0 mb-2" data-toggle="collapse" href="#webDetails3" role="button"
-                        aria-expanded="false" aria-controls="webDetails3">
-                        Key Highlights
-                      </a>
-                    </div>
-
-                    <div class="collapse" id="webDetails3">
-                      <div class="card card-body border-0 bg-light">
-                        <ul class="text-muted small mb-0 pl-3">
-                          <li><b>Reusable components:</b> Separate UI building blocks for easy updates.</li>
-                          <li><b>Dynamic rendering:</b> UI changes based on state/data.</li>
-                          <li><b>Build + deploy flow:</b> Dev → production build → deploy-ready output.</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-
-        <!-- ========================= ML PROJECTS TAB ========================= -->
-        <div class="tab-pane fade" id="ml-pane" role="tabpanel">
-
-          <div id="mlProjectsCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6000"
-            data-pause="hover">
-
-            <ol class="carousel-indicators">
-              <li data-target="#mlProjectsCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#mlProjectsCarousel" data-slide-to="1"></li>
-            </ol>
-
-            <div class="carousel-inner">
-
-              <!-- Slide 1: Lymphoma -->
-              <div class="carousel-item active">
-                <div class="card shadow-sm border-0">
-                  <div class="card-body p-4">
-
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h4 class="font-weight-bold mb-1">Lymphoma Subclassification from Histopathology Images</h4>
-                        <p class="text-muted mb-2">
-                          Deep embeddings + classical ML using <span class="font-weight-bold">df-analyze</span>
-                        </p>
-                      </div>
-                      <span class="badge badge-primary px-3 py-2">Medical Imaging</span>
-                    </div>
-
-                    <div class="list-group mb-3">
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        Dataset <span class="badge badge-light border">15,000 images</span>
-                      </div>
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        Classes <span class="badge badge-light border">CLL • FL • MCL</span>
-                      </div>
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        Best Result <span class="badge badge-success">KNN + SGD → 100% Accuracy & AUROC</span>
-                      </div>
-                    </div>
-
-                    <p class="text-muted mb-3">
-                      Goal was to classify lymphoma subtypes from histopathology images to support faster diagnosis.
-                      We used embedding-based representations and compared multiple machine learning models across
-                      different dataset splits to validate performance.
-                    </p>
-
-                    <div class="mb-3">
-                      <span class="badge badge-light border mr-2 mb-2">df-analyze</span>
-                      <span class="badge badge-light border mr-2 mb-2">KNN</span>
-                      <span class="badge badge-light border mr-2 mb-2">SGD</span>
-                      <span class="badge badge-light border mr-2 mb-2">LightGBM</span>
-                      <span class="badge badge-light border mr-2 mb-2">Random Forest</span>
-                      <span class="badge badge-light border mb-2">AUROC</span>
-                    </div>
-
-                    <div class="d-flex flex-wrap align-items-center mb-2">
-                      <a href="#" target="_blank" class="btn btn-outline-dark btn-sm mr-2 mb-2">
-                        <i class="bi bi-github"></i> GitHub
-                      </a>
-
-                      <a class="btn btn-link btn-sm px-0 mb-2" data-toggle="collapse" href="#mlHighlights1"
-                        role="button" aria-expanded="false" aria-controls="mlHighlights1">
-                        Key Highlights
-                      </a>
-                    </div>
-
-                    <div class="collapse" id="mlHighlights1">
-                      <div class="card card-body border-0 bg-light">
-                        <ul class="text-muted small mb-0 pl-3">
-                          <li><b>Evaluation-first approach:</b> tested models across multiple split strategies.</li>
-                          <li><b>Strong embedding results:</b> achieved very high AUROC and accuracy.</li>
-                          <li><b>Clinical relevance:</b> supports diagnostic decision-making and reduces
-                            misclassification risk.</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2: ICU -->
-              <div class="carousel-item">
-                <div class="card shadow-sm border-0">
-                  <div class="card-body p-4">
-
-                    <div class="d-flex justify-content-between align-items-start flex-wrap">
-                      <div>
-                        <h4 class="font-weight-bold mb-1">ICU Patient Survival Prediction</h4>
-                        <p class="text-muted mb-2">
-                          LightGBM + <span class="font-weight-bold">GANDALF</span> for tabular deep learning
-                        </p>
-                      </div>
-                      <span class="badge badge-dark px-3 py-2">Healthcare ML</span>
-                    </div>
-
-                    <div class="list-group mb-3">
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        Dataset <span class="badge badge-light border">91,000+ ICU records</span>
-                      </div>
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        Features <span class="badge badge-light border">Ethnicity • ICU stay type</span>
-                      </div>
-                      <div class="list-group-item d-flex justify-content-between align-items-center">
-                        Best Accuracy <span class="badge badge-success">LightGBM → 93.7%</span>
-                      </div>
-                    </div>
-
-                    <p class="text-muted mb-3">
-                      Built models to predict survival outcomes for ICU patients using large clinical datasets.
-                      Compared LightGBM vs GANDALF and examined stability across demographic / subgroup categories.
-                      Emphasis was on reliable evaluation and interpretability-friendly modeling choices.
-                    </p>
-
-                    <div class="mb-3">
-                      <span class="badge badge-light border mr-2 mb-2">LightGBM</span>
-                      <span class="badge badge-light border mr-2 mb-2">GANDALF</span>
-                      <span class="badge badge-light border mr-2 mb-2">Feature Selection</span>
-                      <span class="badge badge-light border mr-2 mb-2">Subgroup Analysis</span>
-                      <span class="badge badge-light border mb-2">Tabular ML</span>
-                    </div>
-
-                    <div class="d-flex flex-wrap align-items-center mb-2">
-                      <a href="#" target="_blank" class="btn btn-outline-dark btn-sm mr-2 mb-2">
-                        <i class="bi bi-github"></i> GitHub
-                      </a>
-
-                      <a class="btn btn-link btn-sm px-0 mb-2" data-toggle="collapse" href="#mlHighlights2"
-                        role="button" aria-expanded="false" aria-controls="mlHighlights2">
-                        Key Highlights
-                      </a>
-                    </div>
-
-                    <div class="collapse" id="mlHighlights2">
-                      <div class="card card-body border-0 bg-light">
-                        <ul class="text-muted small mb-0 pl-3">
-                          <li><b>Model comparison:</b> evaluated LightGBM against a tabular DL approach (GANDALF).</li>
-                          <li><b>Strong baseline:</b> LightGBM delivered high accuracy with stable performance.</li>
-                          <li><b>Fairness-aware checks:</b> analyzed results across subgroups to understand
-                            generalization.</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-  <section id="contact" class="py-5 bg-white border-top">
-    <div class="container">
-
-      <!-- Header -->
-      <div class="text-center mb-4">
-        <h2 class="font-weight-bold mb-2">Let’s Connect</h2>
-        <p class="text-muted mb-0">
-          I’m open to opportunities, collaborations, and interesting tech conversations.
-        </p>
-      </div>
-
-      <div class="row justify-content-center">
-
-        <div class="col-lg-8">
-          <div class="card shadow-sm border-0">
-            <div class="card-body p-4 text-center">
-
-              <h5 class="font-weight-bold mb-3">Reach me directly</h5>
-
-              <!-- Contact Buttons -->
-              <div class="d-flex flex-wrap justify-content-center">
-
-                <!-- LinkedIn -->
-                <a href="linkedin.com/in/bharathgopalsamy" target="_blank"
-                  class="btn btn-outline-primary m-2 d-flex align-items-center">
-                  <i class="bi bi-linkedin mr-2"></i> LinkedIn
-                </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/bharathgopalswamy" target="_blank"
-                  class="btn btn-outline-dark m-2 d-flex align-items-center">
-                  <i class="bi bi-github mr-2"></i> GitHub
-                </a>
-
-                <!-- Email -->
-                <a href="bharathgopalswamy09@gmail.com" class="btn btn-outline-success m-2 d-flex align-items-center">
-                  <i class="bi bi-envelope-fill mr-2"></i> Email Me
-                </a>
-
-              </div>
-
-              <hr class="my-4">
-
-              <!-- Creative line -->
-              <p class="text-muted mb-0">
-                Whether it's building products, improving UI, or solving real-world problems -
-                I'm always excited to create meaningful digital experiences.
-              </p>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    $('.navbar-nav a').on('click', function () {
-      $('.navbar-collapse').collapse('hide');
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.getElementById('navbarNav');
+    const bsCollapse = navbarCollapse ? new bootstrap.Collapse(navbarCollapse, { toggle: false }) : null;
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) bsCollapse.hide();
+      });
     });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
-
-
 </body>
-
 </html>
