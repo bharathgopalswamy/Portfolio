@@ -1,1236 +1,375 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-CA">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description"
-content="Bharath Gopalsamy — Software Developer specializing in full-stack development, data analytics, SQL, Python, Power BI, application support, and scalable web applications." />
-<meta property="og:image"
-content="https://bharathgopalsamy.vercel.app/social-preview.png">
-<title>Bharath Gopalsamy | Junior Application Developer</title>
-  
-
-<link rel="icon" type="image/png" href="Profile2.jpeg">
-
-
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #07111f;
-      --bg-soft: #0d1b2e;
-      --card: rgba(255, 255, 255, 0.08);
-      --card-border: rgba(255, 255, 255, 0.13);
-      --text: #eef5ff;
-      --muted: #aab8cc;
-      --brand: #60a5fa;
-      --brand-2: #22c55e;
-      --brand-3: #a78bfa;
-      --light: #f7faff;
-      --dark-text: #132033;
-      --dark-muted: #5f6f86;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
-      --radius: 26px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    a { text-decoration: none; }
-
-    .navbar {
-      backdrop-filter: blur(18px);
-      background: rgba(7, 17, 31, 0.82) !important;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .navbar-brand {
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--text) !important;
-    }
-
-    .nav-link {
-      color: rgba(238, 245, 255, 0.76) !important;
-      font-weight: 600;
-      font-size: 0.93rem;
-      margin-left: 0.3rem;
-    }
-
-    .nav-link:hover, .nav-link.active { color: #fff !important; }
-
-    .section {
-      padding: 96px 0;
-      position: relative;
-    }
-
-    .section-light {
-      background: var(--light);
-      color: var(--dark-text);
-    }
-
-    .section-title {
-      font-weight: 800;
-      letter-spacing: -0.045em;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      margin-bottom: 0.7rem;
-    }
-
-    .section-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--brand);
-      font-weight: 800;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 0.7rem;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0 auto;
-      line-height: 1.75;
-    }
-.award-image{
-    width:100%;
-    max-width:300px;
-    transition:.3s;
-}
-
-.award-image:hover{
-    transform:scale(1.03);
-}
-    .section-light .section-subtitle,
-    .section-light .text-muted-custom { color: var(--dark-muted); }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 135px 0 80px;
-      background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.35), transparent 32%),
-        radial-gradient(circle at 78% 18%, rgba(34, 197, 94, 0.18), transparent 30%),
-        radial-gradient(circle at 50% 95%, rgba(167, 139, 250, 0.18), transparent 30%),
-        linear-gradient(135deg, #07111f 0%, #0d1b2e 55%, #06111e 100%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent 78%);
-      pointer-events: none;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.7rem 1rem;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
-      color: rgba(238, 245, 255, 0.92);
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-
-    .hero h1 {
-      font-size: clamp(3.1rem, 8vw, 6.8rem);
-      font-weight: 800;
-      letter-spacing: -0.075em;
-      line-height: 0.95;
-      margin: 1.35rem 0 1.2rem;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #ffffff, #93c5fd 42%, #86efac 78%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-lead {
-      max-width: 760px;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      color: rgba(238, 245, 255, 0.78);
-      line-height: 1.8;
-    }
-
-    .btn-glow {
-      border: 0;
-      color: #06111e;
-      font-weight: 800;
-      padding: 0.9rem 1.25rem;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #93c5fd, #86efac);
-      box-shadow: 0 18px 50px rgba(96, 165, 250, 0.24);
-    }
-
-    .btn-glow:hover { transform: translateY(-2px); color: #06111e; }
-
-    .btn-ghost {
-      color: var(--text);
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.06);
-      font-weight: 800;
-      padding: 0.9rem 1.25rem;
-      border-radius: 999px;
-    }
-
-    .btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.32); transform: translateY(-2px); }
-
-    .glass-card {
-      border: 1px solid var(--card-border);
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(20px);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .glass-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 255, 255, 0.24);
-      box-shadow: 0 28px 90px rgba(0,0,0,0.28);
-    }
-
-    .profile-card {
-      padding: 1.2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .profile-card::after {
-      content: "";
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      right: -55px;
-      top: -55px;
-      background: radial-gradient(circle, rgba(96,165,250,0.35), transparent 65%);
-      pointer-events: none;
-    }
-
-    .profile-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.05);
-    }
-
-    .stat-box {
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      padding: 1rem;
-      background: rgba(255,255,255,0.06);
-      height: 100%;
-    }
-
-    .stat-number {
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-    }
-
-    .metric-strip {
-      margin-top: -42px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .metric-card {
-      background: #ffffff;
-      color: var(--dark-text);
-      border-radius: 22px;
-      box-shadow: 0 20px 60px rgba(13, 27, 46, 0.15);
-      padding: 1.25rem;
-      height: 100%;
-      border: 1px solid rgba(19, 32, 51, 0.08);
-    }
-
-    .metric-card i { color: var(--brand); font-size: 1.6rem; }
-
-    .metric-card strong {
-      display: block;
-      font-size: 1.45rem;
-      letter-spacing: -0.04em;
-      margin-top: 0.4rem;
-    }
-
-    .soft-card {
-      background: #fff;
-      color: var(--dark-text);
-      border-radius: var(--radius);
-      border: 1px solid rgba(19, 32, 51, 0.08);
-      box-shadow: 0 20px 60px rgba(13, 27, 46, 0.08);
-      transition: all 0.25s ease;
-      height: 100%;
-    }
-
-    .soft-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 26px 80px rgba(13, 27, 46, 0.14);
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      border-radius: 999px;
-      padding: 0.5rem 0.75rem;
-      font-size: 0.85rem;
-      font-weight: 750;
-      color: #1e3658;
-      background: #eef6ff;
-      border: 1px solid #dbeafe;
-      margin: 0.22rem;
-      transition: all 0.22s ease;
-    }
-
-    .pill:hover { transform: translateY(-2px); background: #e0f2fe; }
-
-    .timeline {
-      position: relative;
-      padding-left: 1.4rem;
-    }
-
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 0.6rem;
-      bottom: 0.6rem;
-      left: 0;
-      width: 2px;
-      background: linear-gradient(var(--brand), var(--brand-2));
-      opacity: 0.55;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 1.4rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -1.75rem;
-      top: 0.45rem;
-      width: 14px;
-      height: 14px;
-      border-radius: 999px;
-      background: #fff;
-      border: 4px solid var(--brand);
-      box-shadow: 0 0 0 6px rgba(96,165,250,0.15);
-    }
-
-    .experience-card, .project-card {
-      padding: 1.5rem;
-    }
-
-    .role-date {
-      color: #2563eb;
-      background: #eff6ff;
-      border: 1px solid #dbeafe;
-      font-weight: 800;
-      border-radius: 999px;
-      padding: 0.45rem 0.75rem;
-      font-size: 0.78rem;
-      white-space: nowrap;
-    }
-
-    .project-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 35%);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-      pointer-events: none;
-    }
-
-    .project-card:hover::before { opacity: 1; }
-
-    .project-icon {
-      width: 56px;
-      height: 56px;
-      display: inline-grid;
-      place-items: center;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #dbeafe, #dcfce7);
-      color: #0f3d75;
-      font-size: 1.45rem;
-      margin-bottom: 1rem;
-    }
-
-    .link-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      border-radius: 999px;
-      padding: 0.65rem 0.9rem;
-      font-weight: 800;
-      color: #12233c;
-      background: #f4f7fb;
-      border: 1px solid #e5ecf6;
-      margin-right: 0.35rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .link-button:hover { color: #0b61c9; transform: translateY(-2px); }
-
-    .dark-panel {
-      background:
-        radial-gradient(circle at top left, rgba(96,165,250,0.20), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(34,197,94,0.13), transparent 28%),
-        #07111f;
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--text);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .contact-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
-      border-radius: 999px;
-      padding: 0.85rem 1.1rem;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.08);
-      font-weight: 800;
-      margin: 0.35rem;
-    }
-
-    .contact-button:hover { color: #fff; background: rgba(255,255,255,0.14); transform: translateY(-2px); }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.09);
-      color: var(--muted);
-      padding: 30px 0;
-    }
-
-    @media (max-width: 991px) {
-      .hero { padding-top: 112px; text-align: center; }
-      .hero-lead { margin-left: auto; margin-right: auto; }
-      .metric-strip { margin-top: 0; padding-top: 40px; background: var(--light); }
-      .section { padding: 74px 0; }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bharath Gopalsamy · Business Systems Developer &amp; Application Support</title>
+  <meta name="description" content="Bharath Gopalsamy builds and supports the internal systems organizations run on: service desks, intake workflows, records and reporting. React, Node.js, SQL. Nova Scotia, Canada." />
+  <meta property="og:title" content="Bharath Gopalsamy · Business Systems Developer & Application Support" />
+  <meta property="og:description" content="Service desks, intake workflows, records and reporting. React · Node.js · SQL · Nova Scotia, Canada." />
+  <meta property="og:image" content="https://bharathgopalsamy.vercel.app/assets/service-desk-queue.png" />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="icon" href="Profile2.jpeg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="#top"><img src="Profile2.jpeg" alt="" />Bharath Gopalsamy</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#work">Focus</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="prompt">~/bharath $ whoami</p>
+        <h1>Bharath Gopalsamy</h1>
+        <div class="accent-bar"></div>
+        <p class="role">Business Systems Developer · Application Support</p>
+        <p class="tagline">I build and support the internal systems organizations run on: service desks, intake workflows, records and reporting. React, Node.js and SQL on the build side; debugging, regression testing and documentation on the support side.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn" href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener">Live demo ↗</a>
+          <a class="btn" href="Bharath_Gopalsamy_SDE_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+        <div class="facts">
+          <span class="chip"><b>Now</b> · Academic Services Assistant, StFX Admissions</span>
+          <span class="chip"><b>MACS</b> · St. Francis Xavier University, 2026</span>
+          <span class="chip"><b>Based in</b> · Nova Scotia, Canada</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="photo-frame"><img src="Profile2.jpeg" alt="Bharath Gopalsamy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOCUS ===================== -->
+  <section id="work" class="section-alt">
     <div class="container">
-      <a class="navbar-brand" href="#home"><img src="Profile2.jpeg" alt="Bharath Logo" style="width:40px; height:40px; object-fit:cover; border-radius:50%;"> <span class="fw-bold" style="padding-left: 5px;">  Bharath</span></span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item">
-    <a class="nav-link" href="#awards">
-        Awards
-    </a>
-</li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-outline-light rounded-pill px-3" href="#contact">Contact</a></li>
-        </ul>
+      <p class="kicker">// the problem space</p>
+      <h2 class="section-title">The systems behind the work</h2>
+      <p class="section-lead">Most of what keeps an organization running isn't its public website. It's the service desk that triages a broken laptop, the form that turns a maintenance report into a work order, the records system an admissions team lives in, and the report a manager reads on Monday. That's where my experience sits.</p>
+      <div class="cards-3">
+        <div class="card">
+          <span class="icon">01 / build</span>
+          <h3>Build them</h3>
+          <p>React and TypeScript interfaces, Node.js and Express APIs, SQL data models, input validation and automated tests.</p>
+        </div>
+        <div class="card">
+          <span class="icon">02 / support</span>
+          <h3>Support them</h3>
+          <p>Reproduce reported issues, trace API and state problems, run functional and regression checks, document fixes.</p>
+        </div>
+        <div class="card">
+          <span class="icon">03 / use</span>
+          <h3>Work inside them</h3>
+          <p>At StFX Admissions I process applications and keep applicant records accurate in TargetX, a Salesforce-based CRM.</p>
+        </div>
+      </div>
+
+      <h3 style="margin:3rem 0 1rem">Systems map: how my projects fit together</h3>
+      <div class="map-wrap">
+        <svg viewBox="0 0 980 300" role="img" aria-labelledby="mapTitle mapDesc">
+          <title id="mapTitle">Systems map</title>
+          <desc id="mapDesc">MaintainIQ intake sends work requests to the Service Desk. Service Desk ticket and SLA data, admissions records and intake exports feed an IT operations reporting layer. Intake and Service Desk are built; Records and Reporting are planned.</desc>
+          <defs>
+            <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#38bdf8"/></marker>
+            <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker>
+          </defs>
+          <g font-family="Inter, Segoe UI, sans-serif">
+            <rect x="20" y="30" width="250" height="96" rx="14" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+            <text x="40" y="62" fill="#e2e8f0" font-size="18" font-weight="700">Intake · MaintainIQ</text>
+            <text x="40" y="86" fill="#94a3b8" font-size="14">free text → work request</text>
+            <text x="40" y="108" fill="#34d399" font-size="12" font-family="JetBrains Mono, monospace">● built</text>
+
+            <rect x="365" y="30" width="250" height="96" rx="14" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+            <text x="385" y="62" fill="#e2e8f0" font-size="18" font-weight="700">Service Desk</text>
+            <text x="385" y="86" fill="#94a3b8" font-size="14">priority · SLA · workflow · audit</text>
+            <text x="385" y="108" fill="#34d399" font-size="12" font-family="JetBrains Mono, monospace">● built · live demo</text>
+
+            <rect x="20" y="180" width="250" height="96" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2" stroke-dasharray="6 5"/>
+            <text x="40" y="212" fill="#cbd5e1" font-size="18" font-weight="700">Records · Admissions</text>
+            <text x="40" y="236" fill="#94a3b8" font-size="14">Java · Spring Boot · PostgreSQL</text>
+            <text x="40" y="258" fill="#a5b4fc" font-size="12" font-family="JetBrains Mono, monospace">○ planned</text>
+
+            <rect x="710" y="105" width="250" height="96" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2" stroke-dasharray="6 5"/>
+            <text x="730" y="137" fill="#cbd5e1" font-size="18" font-weight="700">Reporting · IT Ops</text>
+            <text x="730" y="161" fill="#94a3b8" font-size="14">SQL star schema · Power BI</text>
+            <text x="730" y="183" fill="#a5b4fc" font-size="12" font-family="JetBrains Mono, monospace">○ planned</text>
+
+            <path d="M270 78 H357" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+            <text x="282" y="68" fill="#94a3b8" font-size="12">work requests</text>
+            <path d="M615 78 H660 Q680 78 680 98 V140 Q680 153 700 153" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#a1)"/>
+            <text x="626" y="68" fill="#94a3b8" font-size="12">ticket + SLA data</text>
+            <path d="M270 228 H660 Q680 228 680 208 V170 Q680 158 700 158" stroke="#64748b" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#a2)"/>
+            <text x="420" y="218" fill="#94a3b8" font-size="12">application funnel</text>
+          </g>
+        </svg>
+        <div class="legend"><span class="l-live">built and on GitHub</span><span class="l-plan">on the roadmap</span></div>
       </div>
     </div>
-  </nav>
-
-  <main>
-    <section id="home" class="hero position-relative">
-      <div class="container position-relative">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-7 reveal">
-            <span class="hero-badge">
-  <i class="bi bi-lightning-charge-fill text-warning"></i>
-Junior Application Developer · React · Application Support
-</span>
-
-<h1>
-Building <span class="gradient-text">scalable applications</span>
-for real-world impact.
-</h1>
-
-
-            <div class="d-flex flex-wrap gap-2 mt-4 justify-content-center justify-content-lg-start">
-              <a href="#projects" class="btn btn-glow"><i class="bi bi-rocket-takeoff me-2"></i>View Projects</a>
-              <a href="Bharath_Gopalsamy_SDE_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener"><i class="bi bi-download me-2"></i>Download Resume</a>
-              <a href="mailto:bharathgopalswamy09@gmail.com" class="btn btn-ghost"><i class="bi bi-envelope me-2"></i>Hire / Contact</a>
-            </div>
-          </div>
-
-     <div class="col-lg-5 reveal">
-  <div class="glass-card profile-card">
-    <img src="Profile2.jpeg" alt="Bharath Gopalsamy profile photo" class="profile-img" />
-
-    <div class="row g-3 mt-2">
-
-      <div class="col-6">
-        <div class="stat-box">
-          <div class="stat-number">2+</div>
-          <div class="text-white-50 small">Years of Experience</div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="stat-box">
-          <div class="stat-number">8+</div>
-          <div class="text-white-50 small">Projects Built</div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="stat-box">
-          <div class="stat-number">10+</div>
-          <div class="text-white-50 small">Technologies</div>
-        </div>
-      </div>
-
-      <div class="col-6">
-        <div class="stat-box">
-          <div class="stat-number">3</div>
-          <div class="text-white-50 small">Internships</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ================= METRIC STRIP ================= -->
-
-<section class="metric-strip section-light">
-  <div class="container">
-    <div class="row g-3">
-
-      <div class="col-md-3 reveal">
-        <div class="metric-card">
-          <i class="bi bi-window-stack"></i>
-          <strong>Application Development</strong>
-          <span class="text-muted-custom">
-            React • Node.js • REST APIs
-          </span>
-        </div>
-      </div>
-
-      <div class="col-md-3 reveal">
-        <div class="metric-card">
-          <i class="bi bi-life-preserver"></i>
-          <strong>Application Support</strong>
-          <span class="text-muted-custom">
-            Debugging • Issue Resolution
-          </span>
-        </div>
-      </div>
-
-      <div class="col-md-3 reveal">
-        <div class="metric-card">
-          <i class="bi bi-database"></i>
-          <strong>Database</strong>
-          <span class="text-muted-custom">
-            SQL • MongoDB • MySQL
-          </span>
-        </div>
-      </div>
-
-      <div class="col-md-3 reveal">
-        <div class="metric-card">
-          <i class="bi bi-code-slash"></i>
-          <strong>Frontend Development</strong>
-          <span class="text-muted-custom">
-            React • TypeScript • JavaScript
-          </span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about" class="section section-light">
-  <div class="container">
-    <div class="row align-items-center g-5">
-
-      <div class="col-lg-5 reveal">
-
-        <span class="section-kicker">
-          <i class="bi bi-person-badge"></i> About
-        </span>
-
-        <h2 class="section-title">
-          Building reliable applications from frontend to backend.
-        </h2>
-
-        <p class="text-muted-custom lead">
-          I'm a Junior Application Developer with experience building, integrating, troubleshooting, and supporting modern web applications. I work across React, JavaScript, TypeScript, Node.js, REST APIs, SQL, MongoDB, Python, and Power BI to deliver reliable software solutions that improve user experience and business processes.
-        </p>
-
-      </div>
-
-      <div class="col-lg-7 reveal">
-
-        <div class="soft-card p-4 p-lg-5">
-
-          <h4 class="fw-bold mb-3">Core Strengths</h4>
-
-          <div class="row g-3">
-
-            <div class="col-md-6">
-              <div class="p-3 bg-light rounded-4 h-100">
-
-                <i class="bi bi-life-preserver text-primary fs-3"></i>
-
-                <h6 class="fw-bold mt-2">
-                  Application Support
-                </h6>
-
-                <p class="text-muted-custom mb-0 small">
-                  Supporting production applications by troubleshooting issues,
-                  investigating root causes, validating fixes, and ensuring
-                  reliable system performance.
-                </p>
-
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="p-3 bg-light rounded-4 h-100">
-
-                <i class="bi bi-window-stack text-success fs-3"></i>
-
-                <h6 class="fw-bold mt-2">
-                  Application Development
-                </h6>
-
-                <p class="text-muted-custom mb-0 small">
-                  Building responsive and scalable web applications using
-                  React, Node.js, Express.js, REST APIs, and modern JavaScript
-                  technologies.
-                </p>
-
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="p-3 bg-light rounded-4 h-100">
-
-                <i class="bi bi-bug text-danger fs-3"></i>
-
-                <h6 class="fw-bold mt-2">
-                  Problem Solving
-                </h6>
-
-                <p class="text-muted-custom mb-0 small">
-                  Diagnosing application issues through debugging, testing,
-                  root cause analysis, and continuous performance improvements.
-                </p>
-
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="p-3 bg-light rounded-4 h-100">
-
-                <i class="bi bi-gear-wide-connected text-warning fs-3"></i>
-
-                <h6 class="fw-bold mt-2">
-                  Process Improvement
-                </h6>
-
-                <p class="text-muted-custom mb-0 small">
-                  Improving workflows through documentation, stakeholder
-                  collaboration, and practical solutions that enhance
-                  productivity and long-term maintainability.
-                </p>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <section id="skills" class="section">
-      <div class="container">
-        <div class="text-center mb-5 reveal">
-          <span class="section-kicker"><i class="bi bi-code-slash"></i> Skills</span>
-         <h2 class="section-title">
-Technical Skills
-</h2>
-
-<p class="section-subtitle">
-A practical toolkit spanning software development, data analytics, testing, application support, and modern development workflows.
-</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="row g-4">
-
-  <!-- Analytics & Reporting -->
-  <div class="col-lg-6 reveal">
-    <div class="glass-card p-4 h-100">
-      <h4 class="fw-bold mb-3">
-        <i class="bi bi-bar-chart-line-fill me-2 text-primary"></i>
-        Analytics & Reporting
-      </h4>
-
-      <span class="pill">SQL</span>
-      <span class="pill">Python</span>
-      <span class="pill">Pandas</span>
-      <span class="pill">Power BI</span>
-      <span class="pill">Excel</span>
-      <span class="pill">Chart.js</span>
-      <span class="pill">MongoDB Aggregation</span>
-    </div>
-  </div>
-
-  <!-- Programming -->
-  <div class="col-lg-6 reveal">
-    <div class="glass-card p-4 h-100">
-      <h4 class="fw-bold mb-3">
-        <i class="bi bi-code-square me-2 text-success"></i>
-        Programming
-      </h4>
-
-      <span class="pill">JavaScript</span>
-      <span class="pill">TypeScript</span>
-      <span class="pill">Python</span>
-      <span class="pill">HTML5</span>
-      <span class="pill">CSS3</span>
-    </div>
-  </div>
-
-  <!-- Application Development -->
-  <div class="col-lg-6 reveal">
-    <div class="glass-card p-4 h-100">
-      <h4 class="fw-bold mb-3">
-        <i class="bi bi-window-stack me-2 text-warning"></i>
-        Application Development
-      </h4>
-
-      <span class="pill">React.js</span>
-      <span class="pill">Node.js</span>
-      <span class="pill">Express.js</span>
-      <span class="pill">REST APIs</span>
-      <span class="pill">MongoDB</span>
-      <span class="pill">MySQL</span>
-    </div>
-  </div>
-
-  <!-- Testing & Tools -->
-  <div class="col-lg-6 reveal">
-    <div class="glass-card p-4 h-100">
-     <h4 class="fw-bold mb-3">
-    <i class="bi bi-tools me-2 text-danger"></i>
-    Tools & Process
-</h4>
-
-      <span class="pill">Git</span>
-<span class="pill">GitHub</span>
-<span class="pill">Postman</span>
-<span class="pill">Chrome DevTools</span>
-<span class="pill">Squarespace CMS</span>
-<span class="pill">Agile/Scrum</span>
-<span class="pill">Documentation</span>
-<span class="pill">Process Improvement</span>
-    </div>
-  </div>
-
-</div>
-      </div>
-    </section>
-
- <section id="experience" class="section section-light">
-  <div class="container">
-    <div class="text-center mb-5 reveal">
-      <span class="section-kicker"><i class="bi bi-briefcase"></i> Experience</span>
-      <h2 class="section-title">Professional Experience</h2>
-      <p class="section-subtitle">
-        Experience spanning software development, operational analytics, application support, process improvement, documentation, and cross-functional collaboration.
-      </p>
-    </div>
-
-    <div class="timeline">
-
-      <!-- Website Coordinator -->
-      <div class="timeline-item reveal">
-        <div class="soft-card experience-card">
-          <div class="d-flex justify-content-between flex-wrap gap-2 mb-2">
-            <div>
-              <h4 class="fw-bold mb-1">Website Coordinator</h4>
-              <p class="text-muted-custom mb-0">St. Francis Xavier University Students’ Union · Antigonish, NS</p>
-            </div>
-            <span class="role-date">Aug 2025 – May 2026</span>
-          </div>
-
-          <p class="text-muted-custom mb-2">
-            Supported website operations by maintaining content, improving publishing workflows, resolving website issues, and developing operational reports for cross-department stakeholders.
-          </p>
-
-          <ul class="text-muted-custom mb-3">
-            <li>Analyzed content update workflows across three departments and implemented standardized publishing procedures.</li>
-            <li>Maintained website content and documentation supporting more than 5,000 students using Squarespace CMS.</li>
-            <li>Investigated navigation, layout, and content issues through root cause analysis and documented corrective actions.</li>
-            <li>Created operational tracking reports using Squarespace data, Excel, and website issue logs to support reporting and workflow monitoring.</li>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects">
+    <div class="container">
+      <p class="kicker">// projects</p>
+      <h2 class="section-title">Flagship projects</h2>
+      <p class="section-lead">Complete, tested applications with architecture notes and a development log. Personal portfolio projects built with AI pair-programming. I set the requirements, review every change and can explain each design decision.</p>
+
+      <div class="flagships">
+        <article class="project featured">
+          <span class="status">● live demo · CI passing</span>
+          <h3>Service Desk Ticketing System</h3>
+          <a href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener"><img class="shot" src="assets/service-desk-queue.png" alt="Ticket queue sorted by priority with live SLA countdown" loading="lazy" /></a>
+          <p>An IT service desk modelled on how internal support teams handle incidents.</p>
+          <ul>
+            <li>Priority from <b>impact × urgency</b> (P1–P4), following the ITIL matrix approach</li>
+            <li>Response and resolution <b>SLA deadlines</b> with breach detection and a live countdown</li>
+            <li>Ticket <b>workflow enforced on the server</b>; every change kept in an <b>audit trail</b></li>
+            <li><b>SQL reporting</b>: SLA compliance, breaches, average resolution time, volumes</li>
+            <li>39 automated tests, GitHub Actions CI, Docker image deployed on Render</li>
           </ul>
-
-          <span class="pill">Squarespace</span>
-          <span class="pill">HTML</span>
-          <span class="pill">CSS</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">Excel</span>
-          <span class="pill">Documentation</span>
-        </div>
-      </div>
-
-      <!-- FirstLanguage -->
-      <div class="timeline-item reveal">
-        <div class="soft-card experience-card">
-          <div class="d-flex justify-content-between flex-wrap gap-2 mb-2">
-            <div>
-              <h4 class="fw-bold mb-1">Front-End Developer Intern</h4>
-              <p class="text-muted-custom mb-0">FirstLanguage Technologies · Chennai, India</p>
-            </div>
-            <span class="role-date">Aug 2023 – Jul 2024</span>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">SQLite</span><span class="tag">Zod</span><span class="tag">Vitest</span><span class="tag">Docker</span></div>
+          <div class="links">
+            <a href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener">Live demo ↗</a>
+            <a href="https://github.com/bharathgopalswamy/service-desk-ticketing-system" target="_blank" rel="noopener">Source</a>
+            <a href="https://github.com/bharathgopalswamy/service-desk-ticketing-system/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture</a>
           </div>
+        </article>
 
-          <p class="text-muted-custom mb-2">
-            Developed analytics dashboards and reusable application components while collaborating with backend developers to deliver reliable, data-driven software in Agile environments.
-          </p>
-
-          <ul class="text-muted-custom mb-3">
-            <li>Developed reusable TypeScript React components for NLP analytics dashboards using memoization and code splitting.</li>
-            <li>Investigated data inconsistencies across dashboard components through root cause analysis and validated solutions using Jest testing.</li>
-            <li>Integrated REST APIs, participated in code reviews, and collaborated with cross-functional teams to deliver production features.</li>
+        <article class="project featured">
+          <span class="status">● CI passing</span>
+          <h3>MaintainIQ Intake</h3>
+          <p>Turns plain-language maintenance reports into structured CMMS work requests. A person reviews every field before anything is submitted.</p>
+          <ul>
+            <li>Gemini API extraction validated against a <b>Zod schema</b>; unknown fields stay blank and are flagged, never invented</li>
+            <li>Deterministic <b>safety rules</b> (gas, fire, electrical) escalate priority independently of the AI</li>
+            <li>Internal errors are logged on the server, never shown to users</li>
+            <li>Automated tests, GitHub Actions CI and a two-stage Docker image</li>
           </ul>
-
-          <span class="pill">React</span>
-          <span class="pill">TypeScript</span>
-          <span class="pill">REST APIs</span>
-          <span class="pill">Jest</span>
-          <span class="pill">Agile</span>
-        </div>
+          <div class="tags"><span class="tag">React</span><span class="tag">Express</span><span class="tag">Gemini API</span><span class="tag">Zod</span><span class="tag">Vitest</span><span class="tag">Docker</span></div>
+          <div class="links">
+            <a href="https://github.com/bharathgopalswamy/maintainiq-intake" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
       </div>
 
-      <!-- Across the Globe -->
-      <div class="timeline-item reveal">
-        <div class="soft-card experience-card">
-          <div class="d-flex justify-content-between flex-wrap gap-2 mb-2">
-            <div>
-              <h4 class="fw-bold mb-1">React Developer Intern</h4>
-              <p class="text-muted-custom mb-0">Across the Globe · Bangalore, India</p>
-            </div>
-            <span class="role-date">May 2023 – Nov 2023</span>
+      <div class="more-projects">
+        <article class="project">
+          <h3>Canadian Job Market Reality Check</h3>
+          <p>Analysis of 2,253 data-analyst job postings to see which skills employers ask for.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">Power BI</span></div>
+          <div class="links"><a href="https://github.com/bharathgopalswamy/job-market-reality-check" target="_blank" rel="noopener">Source</a></div>
+        </article>
+        <article class="project">
+          <h3>Spotify Music Intelligence</h3>
+          <p>API → ETL → normalized MySQL → Power BI pipeline covering 10 albums and 124 tracks.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Spotipy</span><span class="tag">MySQL</span><span class="tag">Power BI</span></div>
+          <div class="links">
+            <a href="https://spotify-music-intelligence-platform.vercel.app" target="_blank" rel="noopener">Demo ↗</a>
+            <a href="https://github.com/bharathgopalswamy/Spotify-Music-Intelligence-Platform" target="_blank" rel="noopener">Source</a>
           </div>
+        </article>
+        <article class="project">
+          <h3>DermaCure</h3>
+          <p>Full-stack prototype with patient, doctor and admin roles, JWT authentication, appointment workflows and browser-side image analysis. Not clinically validated.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">Docker Compose</span></div>
+          <div class="links">
+            <a href="https://derma-ai-psi.vercel.app" target="_blank" rel="noopener">Demo ↗</a>
+            <a href="https://github.com/bharathgopalswamy/DermaAI" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+        <article class="project">
+          <h3>HabitIQ</h3>
+          <p>TypeScript full-stack habit tracker with analytics dashboards and optional Gemini-based planning.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+          <div class="links">
+            <a href="https://habitiq-blond.vercel.app" target="_blank" rel="noopener">Demo ↗</a>
+            <a href="https://github.com/bharathgopalswamy/smart-ai-habit-tracker" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-          <p class="text-muted-custom mb-2">
-            Developed reusable React components and collaborated with backend developers to deliver production-ready application features from design to deployment.
-          </p>
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" class="section-alt">
+    <div class="container">
+      <p class="kicker">// experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+      <p class="section-lead">Software development, website support and, now, the records side of a university admissions office.</p>
 
-          <ul class="text-muted-custom mb-3">
-            <li>Built reusable React components including data tables, forms, and modals to improve code maintainability.</li>
-            <li>Collaborated with backend developers to integrate REST APIs and validate structured application data.</li>
-            <li>Translated business requirements into responsive user interfaces while ensuring reliable component integration.</li>
+      <ol class="timeline">
+        <li class="current">
+          <div class="role-head"><h3>Academic Services Assistant, Admissions</h3><span class="when">Nov 2026 – Present</span></div>
+          <p class="org">St. Francis Xavier University · Antigonish, NS · Contract</p>
+          <ul>
+            <li>Process admissions applications and update applicant records in TargetX CRM (Salesforce-based), checking each for accuracy and completeness.</li>
+            <li>Generate admissions reports and use Excel sorting, filtering and conditional formatting to find inconsistent name and address entries, then track corrections.</li>
+            <li>Work with the Admissions Data Analyst on record validation and spreadsheet reconciliation.</li>
           </ul>
-
-          <span class="pill">React</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">REST APIs</span>
-          <span class="pill">Git</span>
-          <span class="pill">Figma</span>
-        </div>
-      </div>
-
-      <!-- Data Foundry -->
-      <div class="timeline-item reveal">
-        <div class="soft-card experience-card">
-          <div class="d-flex justify-content-between flex-wrap gap-2 mb-2">
-            <div>
-              <h4 class="fw-bold mb-1">Technical Writer Intern</h4>
-              <p class="text-muted-custom mb-0">Data Foundry | Build Data Community from India · Remote</p>
-            </div>
-            <span class="role-date">Feb 2022 – Jun 2022</span>
-          </div>
-
-          <p class="text-muted-custom mb-2">
-            Created technical documentation and educational content covering programming concepts and emerging technologies while collaborating with technical teams to deliver clear, accurate, and user-focused documentation.
-          </p>
-
-          <ul class="text-muted-custom mb-3">
-            <li>Developed structured technical articles and documentation, simplifying complex software concepts for a broad technical audience.</li>
-            <li>Collaborated with developers and technical contributors to validate technical accuracy and ensure documentation remained current and reliable.</li>
-            <li>Applied documentation standards and content organization practices to improve readability, consistency, and accessibility across published resources.</li>
-            <li>Managed documentation workflows using collaborative tools, coordinating drafting, reviews, revisions, and publishing activities.</li>
+        </li>
+        <li>
+          <div class="role-head"><h3>Website Coordinator &amp; Technical Support</h3><span class="when">Aug 2025 – May 2026</span></div>
+          <p class="org">StFX Students' Union · Antigonish, NS · Part-time</p>
+          <ul>
+            <li>Raised a webpage's PageSpeed Insights score from 32 to 93 by investigating performance issues, fixing them and retesting.</li>
+            <li>Delivered page and navigation updates for a site used by a campus community of about 5,000 students, verified on desktop and mobile.</li>
+            <li>Resolved broken links and layout defects by reproducing reports and investigating with browser DevTools before publishing fixes.</li>
+            <li>Organized board records from 2015–2026 into structured pages and tracked requests and changes in Excel.</li>
           </ul>
+        </li>
+        <li>
+          <div class="role-head"><h3>Software Developer</h3><span class="when">Jan 2025 – Jul 2026</span></div>
+          <p class="org">FirstLanguage Technologies</p>
+          <ul>
+            <li>Built React and TypeScript features integrated with REST APIs, including loading, validation and error states.</li>
+            <li>Investigated API and state-related defects, ran functional and regression checks, documented findings and retested fixes.</li>
+            <li>Worked in Agile iterations and code reviews, incorporating feedback into delivered features.</li>
+          </ul>
+        </li>
+        <li>
+          <div class="role-head"><h3>Front-End Developer Intern</h3><span class="when">Aug 2023 – Jul 2024</span></div>
+          <p class="org">FirstLanguage Technologies · Chennai, India</p>
+          <ul>
+            <li>Built reusable React and TypeScript dashboard components that display REST API data, using Context and custom hooks for shared state.</li>
+            <li>Traced inconsistent API responses and state updates, corrected components and retested affected workflows.</li>
+          </ul>
+        </li>
+        <li>
+          <div class="role-head"><h3>React Developer Intern</h3><span class="when">May 2023 – Nov 2023</span></div>
+          <p class="org">Banao Technologies · Remote</p>
+          <ul>
+            <li>Converted wireframes into responsive forms, tables and dashboards with reusable React components.</li>
+            <li>Integrated REST APIs and tested form inputs, API data and error states across desktop and mobile.</li>
+          </ul>
+        </li>
+        <li>
+          <div class="role-head"><h3>Technical Writer Intern</h3><span class="when">Feb 2022 – Jun 2022</span></div>
+          <p class="org">Data Foundry · Remote</p>
+          <ul>
+            <li>Researched and wrote technical articles explaining programming concepts for a developer audience, verifying accuracy with contributors.</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-          <span class="pill">Technical Writing</span>
-          <span class="pill">Documentation</span>
-          <span class="pill">Content Management</span>
-          <span class="pill">SEO</span>
-          <span class="pill">Collaboration</span>
+  <!-- ===================== EDUCATION, AWARD, CERTS ===================== -->
+  <section id="education">
+    <div class="container">
+      <p class="kicker">// education</p>
+      <h2 class="section-title">Education and recognition</h2>
+
+      <div class="two-col" style="margin-bottom:1.4rem">
+        <div class="card edu">
+          <h3>Master of Applied Computer Science</h3>
+          <span class="when">Sep 2024 – May 2026 · Graduated</span>
+          <p>St. Francis Xavier University, Antigonish, NS. Coursework in data structures and algorithms, big data, machine learning, computer and network security, and embedded systems. 82% average.</p>
+        </div>
+        <div class="card edu">
+          <h3>Bachelor of Engineering, Computer Science</h3>
+          <span class="when">Aug 2020 – May 2024</span>
+          <p>SRM Valliammai Engineering College (Anna University), Chennai, India. CGPA 9.07/10.</p>
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="text-center mb-5 reveal">
-          <span class="section-kicker"><i class="bi bi-stars"></i> Featured Projects</span>
-          <h2 class="section-title">Projects demonstrating application development, REST API integration, authentication, and modern web technologies.</h2>
-          <p class="section-subtitle">A focused set of full-stack projects that show practical product thinking, API design, testing, deployment, healthcare workflows, and AI integration.</p>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-lg-6 reveal">
-            <div class="soft-card project-card">
-              <div class="project-icon"><i class="bi bi-headset"></i></div>
-              <h4 class="fw-bold">Service Desk Ticketing System</h4>
-              <a href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener">
-                <img src="assets/service-desk-queue.png" alt="Service desk ticket queue with priority badges and SLA countdown" loading="lazy" style="width:100%;border-radius:10px;margin:.25rem 0 1rem;border:1px solid rgba(255,255,255,.12);">
-              </a>
-              <p class="text-muted-custom">IT service desk application modelled on how internal support teams handle incidents: ITIL-style triage, SLA tracking, a controlled ticket workflow and an audit trail.</p>
-              <ul class="text-muted-custom small">
-                <li>Priority calculated from impact × urgency (P1–P4) with response and resolution SLA deadlines and breach detection.</li>
-                <li>Status workflow enforced on the server (invalid moves return 409); resolution notes required; every change recorded in an audit trail.</li>
-                <li>React agent dashboard: queue with live SLA countdown, ticket detail with allowed actions, create form, and a SQL-driven reports page.</li>
-                <li>39 automated tests (Vitest, Supertest, React Testing Library), GitHub Actions CI with Docker build and container smoke test.</li>
-              </ul>
-              <div class="mb-3"><span class="pill">React</span><span class="pill">Node.js</span><span class="pill">Express</span><span class="pill">SQLite / SQL</span><span class="pill">Zod</span><span class="pill">Docker</span><span class="pill">GitHub Actions</span></div>
-              <a class="link-button" href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live demo</a>
-              <a class="link-button" href="https://github.com/bharathgopalswamy/service-desk-ticketing-system" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-            </div>
-          </div>
-
-          <div class="col-lg-6 reveal">
-            <div class="soft-card project-card">
-              <div class="project-icon"><i class="bi bi-tools"></i></div>
-              <h4 class="fw-bold">MaintainIQ Intake</h4>
-              <p class="text-muted-custom">Proof-of-concept that turns plain-language maintenance reports into structured, validated CMMS work-request fields, with a person reviewing before anything is submitted.</p>
-              <ul class="text-muted-custom small">
-                <li>Gemini API extraction validated against a Zod schema; unknown fields are left blank and listed instead of invented.</li>
-                <li>Deterministic safety rules (gas, fire, electrical hazards) escalate priority independently of the AI output.</li>
-                <li>Express API with input validation and safe error handling; 26 automated tests, CI and a two-stage Docker image.</li>
-              </ul>
-              <div class="mb-3"><span class="pill">React</span><span class="pill">Express</span><span class="pill">Gemini API</span><span class="pill">Zod</span><span class="pill">Vitest</span><span class="pill">Docker</span></div>
-              <a class="link-button" href="https://github.com/bharathgopalswamy/maintainiq-intake" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 reveal">
-            <div class="soft-card project-card">
-              <div class="project-icon"><i class="bi bi-heart-pulse"></i></div>
-              <h4 class="fw-bold">DermaCure</h4>
-              <p class="text-muted-custom">AI-powered skin screening and dermatologist booking platform with browser-side TensorFlow.js analysis and role-separated access.</p>
-              <ul class="text-muted-custom small">
-                <li>Full MERN platform with 9 client-facing pages.</li>
-                <li>JWT auth, bcrypt credentials, protected API routes, patient/doctor/admin roles.</li>
-                <li>Sub-2-second upload analysis through model warm-up and image preprocessing.</li>
-                <li>Jest + RTL tests for auth redirects and async UI flows.</li>
-              </ul>
-              <div class="mb-3"><span class="pill">React/Vite</span><span class="pill">Node</span><span class="pill">MongoDB</span><span class="pill">TensorFlow.js</span><span class="pill">JWT</span></div>
-              <a class="link-button" href="https://derma-ai-psi.vercel.app" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>
-              <a class="link-button" href="https://github.com/bharathgopalswamy/DermaAI" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 reveal">
-            <div class="soft-card project-card">
-              <div class="project-icon"><i class="bi bi-calendar2-check"></i></div>
-              <h4 class="fw-bold">HabitIQ</h4>
-              <p class="text-muted-custom">AI-powered habit tracking SaaS platform with analytics dashboards, Gemini AI routine generation, and real-time UI state.</p>
-              <ul class="text-muted-custom small">
-                <li>TypeScript MERN SaaS with Context API for global habit/auth state.</li>
-                <li>Gemini AI backend pipeline: controller → prompt → parsed response → MongoDB persistence.</li>
-                <li>Recharts analytics dashboard with completion rates, focus scores, and consistency insights.</li>
-                <li>Tested streak logic, habit creation, and mocked AI responses.</li>
-              </ul>
-              <div class="mb-3"><span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">Gemini API</span><span class="pill">Recharts</span><span class="pill">JWT</span></div>
-              <a class="link-button" href="https://habitiq-blond.vercel.app/dashboard" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live</a>
-              <a class="link-button" href="https://github.com/bharathgopalswamy/smart-ai-habit-tracker" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-            </div>
-          </div>
-          <div class="col-lg-4 reveal">
-<div class="soft-card project-card">
-  <div class="project-icon">
-    <i class="bi bi-music-note-beamed"></i>
-  </div>
-
-  <h4 class="fw-bold">Spotify Music Intelligence Platform</h4>
-
-  <p class="text-muted-custom">
-    Full-stack music analytics platform that extracts Spotify data through REST APIs, processes it using Python, stores it in MySQL, and visualizes insights with interactive Power BI dashboards.
-  </p>
-
-  <ul class="text-muted-custom small">
-    <li>Built an automated ETL pipeline using the Spotify Web API and Python to collect album, artist, and track data.</li>
-    <li>Designed a normalized MySQL database and wrote SQL queries to analyze music trends and listening insights.</li>
-    <li>Created interactive Power BI dashboards to visualize artist performance, album statistics, and track analytics.</li>
-  </ul>
-
-  <div class="mb-3">
-    <span class="pill">Python</span>
-    <span class="pill">Spotify API</span>
-    <span class="pill">MySQL</span>
-    <span class="pill">SQL</span>
-    <span class="pill">Power BI</span>
-    <span class="pill">ETL</span>
-  </div>
-
-  <a class="link-button"
-     href="https://spotify-music-intelligence-platform.vercel.app"
-     target="_blank"
-     rel="noopener">
-    <i class="bi bi-box-arrow-up-right"></i> Live
-  </a>
-
-  <a class="link-button"
-     href="https://github.com/bharathgopalswamy/spotify-music-intelligence-platform"
-     target="_blank"
-     rel="noopener">
-    <i class="bi bi-github"></i> GitHub
-  </a>
-
-</div>
+      <div class="two-col">
+        <div class="card award">
+          <a href="award.jpg" target="_blank" rel="noopener"><img src="award.jpg" alt="Media X Award certificate" loading="lazy" /></a>
+          <div>
+            <span class="icon mono" style="color:var(--cyan);font-size:.85rem">award · 2026</span>
+            <h3 style="margin:.3rem 0">Media X Award</h3>
+            <p>StFX Students' Union Student Leadership Awards 2026, for contributions to the Union's website and digital communications. <a href="award.jpg" target="_blank" rel="noopener">View certificate</a></p>
           </div>
         </div>
-
-          <!-- <div class="col-lg-4 reveal">
-            <div class="soft-card project-card">
-              <div class="project-icon"><i class="bi bi-hospital"></i></div>
-              <h4 class="fw-bold">MedCare</h4>
-              <p class="text-muted-custom">Healthcare appointment management system with Django, Google Calendar API sync, OAuth2, and conflict-safe scheduling.</p>
-              <ul class="text-muted-custom small">
-                <li>Django CBVs and ORM with normalized MySQL schema across patients, doctors, and appointments.</li>
-                <li>OAuth2 Google Calendar sync for patient and doctor calendars.</li>
-                <li>Slot conflict detection prevents double-bookings.</li>
-                <li>Server-side validation and permission decorators secure core flows.</li>
-              </ul>
-              <div class="mb-3"><span class="pill">Django</span><span class="pill">MySQL</span><span class="pill">OAuth2</span><span class="pill">Google Calendar API</span><span class="pill">JavaScript</span></div>
-              <a class="link-button" href="https://github.com/bharathgopalswamy/DoctorPatient" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-            </div>
-          </div> -->
-      </div>
-    </section>
-
-    <section id="awards" class="section section-light">
-  <div class="container">
-    <div class="text-center mb-5 reveal">
-      <span class="section-kicker"><i class="bi bi-trophy"></i> Awards</span>
-      <span class="badge rounded-pill bg-warning text-dark mb-3">
-    Student Leadership Awards 2026
-</span>
-
-
-      <h2 class="section-title">Awards & Achievements</h2>
-      <p class="section-subtitle">
-        Recognition received for leadership, digital operations, and contributions to the St. Francis Xavier University Students' Union.
-      </p>
-    </div>
-
-    <div class="soft-card p-4 p-lg-5 reveal">
-      <div class="row align-items-center g-4">
-        <div class="col-md-4 text-center">
-         <img src="award.jpg"
-     alt="Media X Award Certificate"
-     class="img-fluid rounded-4 shadow award-image">
-        </div>
-
-       <div class="col-md-8">
-   <h3 class="fw-bold mb-2">Media X Award</h3>
-
-<p class="text-muted-custom mb-2">
-    St. Francis Xavier University Students' Union • Student Leadership Awards 2026
-</p>
-
-<p class="text-muted-custom">
-    Awarded in recognition of contributions to website operations, digital communications, and process improvements that supported efficient information delivery and smooth cross-department workflows within the Students' Union.
-</p>
-
-    <div class="mt-3">
-        <button
-            type="button"
-            class="link-button"
-            data-bs-toggle="modal"
-            data-bs-target="#awardModal">
-
-            <i class="bi bi-arrows-fullscreen"></i>
-            View Certificate
-        </button>
-    </div>
-</div>
-    </div>
-  </div>
-</section>
-    <section id="education" class="section section-light">
-      <div class="container">
-        <div class="row g-4 align-items-stretch">
-          <div class="col-lg-6 reveal">
-            <div class="soft-card p-4 p-lg-5">
-              <span class="section-kicker"><i class="bi bi-mortarboard"></i> Education</span>
-              <h3 class="fw-bold display-6">Master of Applied Computer Science</h3>
-              <p class="text-muted-custom mb-1">Saint Francis Xavier University · Antigonish, NS, Canada</p>
-              <p class="role-date d-inline-block my-3">Sept 2024 – May 2026</p>
-              <p class="text-muted-custom">Relevant Coursework: Data Structures & Algorithms, Big Data, Machine Learning, Computer & Network Security, Embedded Systems.</p>
-              <p class="mb-0"><strong>Graduate Average:</strong> 82% · Approx. 3.7/4.0 GPA equivalent</p>
-            </div>
-          </div>
-          <div class="col-lg-6 reveal">
-            <div class="soft-card p-4 p-lg-5">
-              <span class="section-kicker"><i class="bi bi-award"></i> Education</span>
-              <h3 class="fw-bold display-6">B.E. Computer Science</h3>
-              <p class="text-muted-custom mb-1">SRM Valliammai Engineering College, Anna University · Chennai, India</p>
-              <p class="role-date d-inline-block my-3">Aug 2020 – May 2024</p>
-              <p class="text-muted-custom">Built strong foundations in programming, software engineering, databases, data structures, and applied project development.</p>
-              <p class="mb-0"><strong>CGPA:</strong> 9.07/10</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="soft-card p-4 p-lg-5 mt-4 reveal">
-          <h4 class="fw-bold mb-3">Certifications</h4>
-          <div class="row g-3">
-            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> Meta Front-End Developer Professional Certificate — Coursera (2026)</span></div>
-            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> Meta Programming with JavaScript — Coursera (2026)</span></div>
-            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> Python for Data Science & AI Development — IBM (2023)</span></div>
-            <div class="col-md-6"><span class="pill"><i class="bi bi-patch-check"></i> React.js Essential Training & REST APIs — LinkedIn Learning (2023)</span></div>
-          </div>
+        <div class="card">
+          <h3>Certifications</h3>
+          <ul class="certs">
+            <li><span>Networking Basics</span><span class="issuer">Cisco · 2026</span></li>
+            <li><span>IT Customer Support Basics</span><span class="issuer">Cisco · 2026</span></li>
+            <li><span>Learning ITIL®</span><span class="issuer">LinkedIn · 2026</span></li>
+            <li><span>Power BI: Dashboards for Beginners</span><span class="issuer">LinkedIn · 2026</span></li>
+            <li><span>Meta Front-End Developer Professional Certificate</span><span class="issuer">Meta · 2026</span></li>
+            <li><span>Getting Started with Cisco Packet Tracer</span><span class="issuer">Cisco · 2024</span></li>
+            <li><span>Python for Data Science, AI &amp; Development</span><span class="issuer">IBM · 2023</span></li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="dark-panel p-4 p-lg-5 text-center reveal">
-          <span class="section-kicker"><i class="bi bi-send"></i> Contact</span>
-          <h2 class="section-title">Open to Junior Application Developer, Application Support, React Developer, and Full-Stack Developer opportunities.</h2>
-          <p class="section-subtitle mb-4">I’m available for full-time, internship, and collaboration opportunities where I can build polished interfaces, reliable APIs, and useful products.</p>
-          <div class="mb-4">
-            <a class="contact-button" href="https://bharathgopalsamy.vercel.app" target="_blank" rel="noopener"><i class="bi bi-globe2"></i> Portfolio</a>
-            <a class="contact-button" href="https://linkedin.com/in/bharathgopalsamy" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
-            <a class="contact-button" href="https://github.com/bharathgopalswamy" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-            <a class="contact-button" href="mailto:bharathgopalswamy09@gmail.com"><i class="bi bi-envelope-fill"></i> Email</a>
-          </div>
-          <a href="Bharath_Gopalsamy_Resume.pdf" class="btn btn-glow" target="_blank" rel="noopener"><i class="bi bi-download me-2"></i>Download Resume</a>
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="section-alt">
+    <div class="container">
+      <p class="kicker">// toolbox</p>
+      <h2 class="section-title">Skills and how I work</h2>
+      <div class="skills" style="margin-bottom:2.5rem">
+        <div class="card"><h3>Application development</h3><ul><li>React</li><li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>REST APIs</li><li>Zod</li><li>HTML/CSS</li></ul></div>
+        <div class="card"><h3>Data and reporting</h3><ul><li>SQL</li><li>MySQL</li><li>SQLite</li><li>MongoDB</li><li>Python</li><li>Excel</li><li>Power BI</li></ul></div>
+        <div class="card"><h3>Quality and support</h3><ul><li>Vitest</li><li>React Testing Library</li><li>Supertest</li><li>Postman</li><li>Regression testing</li><li>Chrome DevTools</li><li>ITIL fundamentals</li></ul></div>
+        <div class="card"><h3>Delivery and business tools</h3><ul><li>Git &amp; GitHub</li><li>GitHub Actions</li><li>Docker</li><li>Vercel</li><li>Render</li><li>TargetX CRM</li><li>Teams &amp; SharePoint</li></ul></div>
+      </div>
+      <ul class="practices">
+        <li><b>Business rules are tested.</b> Priority, SLA and workflow logic each have unit tests; APIs are tested end to end.</li>
+        <li><b>CI on every change.</b> Lint, tests, build, then a Docker build and smoke test.</li>
+        <li><b>Decisions are written down.</b> Each flagship has an architecture doc and a development log.</li>
+        <li><b>Validate on the server, guide in the UI.</b> The interface only offers valid actions; the API still enforces them.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <p class="kicker">// contact</p>
+        <h2 class="section-title">Looking for a full-time technology role in Canada</h2>
+        <p class="muted" style="max-width:40rem;margin:0 auto">Junior software developer, application or IT support analyst, or business systems analyst. Based in Nova Scotia; open to Atlantic Canada, remote within Canada, and relocation for the right role.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="mailto:bharathgopalswamy09@gmail.com">Email me</a>
+          <a class="btn" href="https://linkedin.com/in/bharathgopalsamy" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/bharathgopalswamy" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="Bharath_Gopalsamy_SDE_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <span>© <span id="year"></span> Bharath Gopalsamy. Built with HTML, Bootstrap, and thoughtful UX.</span>
-      <span>React • Node.js • REST APIs • SQL • Application Support</span>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+<footer>
+  <div class="container">© <span id="year">2026</span> Bharath Gopalsamy · Hand-written HTML and CSS · Built with AI pair-programming and reviewed by me</div>
+</footer>
 
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbarCollapse = document.getElementById('navbarNav');
-    const bsCollapse = navbarCollapse ? new bootstrap.Collapse(navbarCollapse, { toggle: false }) : null;
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navbarCollapse && navbarCollapse.classList.contains('show')) bsCollapse.hide();
-      });
-    });
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
-  <!-- Award Modal -->
-<!-- Award Modal -->
-<div class="modal fade" id="awardModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content border-0 bg-transparent">
-
-      <div class="modal-body text-center position-relative">
-
-        <button
-          type="button"
-          class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-          data-bs-dismiss="modal">
-        </button>
-
-        <img
-          src="award.jpg"
-          class="img-fluid rounded-4 shadow-lg"
-          alt="Media X Award Certificate">
-
-      </div>
-
-    </div>
-  </div>
-</div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const toggle = document.querySelector(".menu-toggle");
+  const links = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    const open = links.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(open));
+  });
+  links.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") { links.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
+  });
+</script>
 </body>
 </html>
