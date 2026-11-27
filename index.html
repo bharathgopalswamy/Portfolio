@@ -496,7 +496,7 @@ Junior Application Developer · React · Application Support
 </span>
 
 <h1>
-Bulding <span class="gradient-text">scalable applications</span>
+Building <span class="gradient-text">scalable applications</span>
 for real-world impact.
 </h1>
 
@@ -944,6 +944,41 @@ A practical toolkit spanning software development, data analytics, testing, appl
         </div>
 
         <div class="row g-4">
+          <div class="col-lg-6 reveal">
+            <div class="soft-card project-card">
+              <div class="project-icon"><i class="bi bi-headset"></i></div>
+              <h4 class="fw-bold">Service Desk Ticketing System</h4>
+              <a href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener">
+                <img src="assets/service-desk-queue.png" alt="Service desk ticket queue with priority badges and SLA countdown" loading="lazy" style="width:100%;border-radius:10px;margin:.25rem 0 1rem;border:1px solid rgba(255,255,255,.12);">
+              </a>
+              <p class="text-muted-custom">IT service desk application modelled on how internal support teams handle incidents: ITIL-style triage, SLA tracking, a controlled ticket workflow and an audit trail.</p>
+              <ul class="text-muted-custom small">
+                <li>Priority calculated from impact × urgency (P1–P4) with response and resolution SLA deadlines and breach detection.</li>
+                <li>Status workflow enforced on the server (invalid moves return 409); resolution notes required; every change recorded in an audit trail.</li>
+                <li>React agent dashboard: queue with live SLA countdown, ticket detail with allowed actions, create form, and a SQL-driven reports page.</li>
+                <li>39 automated tests (Vitest, Supertest, React Testing Library), GitHub Actions CI with Docker build and container smoke test.</li>
+              </ul>
+              <div class="mb-3"><span class="pill">React</span><span class="pill">Node.js</span><span class="pill">Express</span><span class="pill">SQLite / SQL</span><span class="pill">Zod</span><span class="pill">Docker</span><span class="pill">GitHub Actions</span></div>
+              <a class="link-button" href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Live demo</a>
+              <a class="link-button" href="https://github.com/bharathgopalswamy/service-desk-ticketing-system" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal">
+            <div class="soft-card project-card">
+              <div class="project-icon"><i class="bi bi-tools"></i></div>
+              <h4 class="fw-bold">MaintainIQ Intake</h4>
+              <p class="text-muted-custom">Proof-of-concept that turns plain-language maintenance reports into structured, validated CMMS work-request fields, with a person reviewing before anything is submitted.</p>
+              <ul class="text-muted-custom small">
+                <li>Gemini API extraction validated against a Zod schema; unknown fields are left blank and listed instead of invented.</li>
+                <li>Deterministic safety rules (gas, fire, electrical hazards) escalate priority independently of the AI output.</li>
+                <li>Express API with input validation and safe error handling; 26 automated tests, CI and a two-stage Docker image.</li>
+              </ul>
+              <div class="mb-3"><span class="pill">React</span><span class="pill">Express</span><span class="pill">Gemini API</span><span class="pill">Zod</span><span class="pill">Vitest</span><span class="pill">Docker</span></div>
+              <a class="link-button" href="https://github.com/bharathgopalswamy/maintainiq-intake" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+            </div>
+          </div>
+
           <div class="col-lg-4 reveal">
             <div class="soft-card project-card">
               <div class="project-icon"><i class="bi bi-heart-pulse"></i></div>
@@ -1019,6 +1054,8 @@ A practical toolkit spanning software development, data analytics, testing, appl
   </a>
 
 </div>
+          </div>
+        </div>
 
           <!-- <div class="col-lg-4 reveal">
             <div class="soft-card project-card">
@@ -1034,8 +1071,7 @@ A practical toolkit spanning software development, data analytics, testing, appl
               <div class="mb-3"><span class="pill">Django</span><span class="pill">MySQL</span><span class="pill">OAuth2</span><span class="pill">Google Calendar API</span><span class="pill">JavaScript</span></div>
               <a class="link-button" href="https://github.com/bharathgopalswamy/DoctorPatient" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
             </div>
-          </div>
-        </div> -->
+          </div> -->
       </div>
     </section>
 
