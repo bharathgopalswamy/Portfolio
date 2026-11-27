@@ -8,18 +8,19 @@
   <meta property="og:title" content="Bharath Gopalsamy · Business Systems Developer & Application Support" />
   <meta property="og:description" content="Service desks, intake workflows, records and reporting. React · Node.js · SQL · Nova Scotia, Canada." />
   <meta property="og:image" content="https://bharathgopalsamy.vercel.app/assets/service-desk-queue.png" />
-  <meta name="theme-color" content="#0b1220" />
-  <link rel="icon" href="assets/favicon.jpg" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" href="assets/avatar.jpg" />
+  <link rel="apple-touch-icon" href="assets/avatar.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <header class="nav">
   <div class="container">
-    <a class="brand" href="#top"><img src="assets/bharath-gopalsamy.jpg" alt="" />Bharath Gopalsamy</a>
+    <a class="brand" href="#top"><img src="assets/avatar.jpg" alt="" />Bharath Gopalsamy</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">☰</button>
     <ul class="nav-links" id="nav-links">
       <li><a href="#work">Focus</a></li>
@@ -34,13 +35,11 @@
 
 <main id="top">
 
-  <!-- ===================== HERO ===================== -->
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <p class="prompt">~/bharath $ whoami</p>
         <h1>Bharath Gopalsamy</h1>
-        <div class="accent-bar"></div>
         <p class="role">Business Systems Developer · Application Support</p>
         <p class="tagline">I build and support the internal systems organizations run on: service desks, intake workflows, records and reporting. React, Node.js and SQL on the build side; debugging, regression testing and documentation on the support side.</p>
         <div class="btn-row">
@@ -49,94 +48,48 @@
           <a class="btn" href="Bharath_Gopalsamy_SDE_Resume.pdf" target="_blank" rel="noopener">Résumé</a>
         </div>
         <div class="facts">
-          <span class="chip"><b>Now</b> · Academic Services Assistant, StFX Admissions</span>
-          <span class="chip"><b>MACS</b> · St. Francis Xavier University, 2026</span>
-          <span class="chip"><b>Based in</b> · Nova Scotia, Canada</span>
+          <span class="chip"><b>Now:</b> Academic Services Assistant, StFX Admissions</span>
+          <span class="chip"><b>MACS:</b> St. Francis Xavier University, 2026</span>
+          <span class="chip"><b>Based in:</b> Nova Scotia, Canada</span>
         </div>
       </div>
       <div class="hero-photo">
-        <div class="photo-frame"><img src="assets/bharath-gopalsamy.jpg" alt="Bharath Gopalsamy" /></div>
+        <img class="photo" src="assets/profile.jpg" alt="Bharath Gopalsamy" width="795" height="1060" />
       </div>
     </div>
   </section>
 
-  <!-- ===================== FOCUS ===================== -->
+  <!-- FOCUS -->
   <section id="work" class="section-alt">
     <div class="container">
-      <p class="kicker">// the problem space</p>
-      <h2 class="section-title">The systems behind the work</h2>
+      <h2 class="section-title">What I work on</h2>
       <p class="section-lead">Most of what keeps an organization running isn't its public website. It's the service desk that triages a broken laptop, the form that turns a maintenance report into a work order, the records system an admissions team lives in, and the report a manager reads on Monday. That's where my experience sits.</p>
       <div class="cards-3">
         <div class="card">
-          <span class="icon">01 / build</span>
           <h3>Build them</h3>
           <p>React and TypeScript interfaces, Node.js and Express APIs, SQL data models, input validation and automated tests.</p>
         </div>
         <div class="card">
-          <span class="icon">02 / support</span>
           <h3>Support them</h3>
           <p>Reproduce reported issues, trace API and state problems, run functional and regression checks, document fixes.</p>
         </div>
         <div class="card">
-          <span class="icon">03 / use</span>
           <h3>Work inside them</h3>
           <p>At StFX Admissions I process applications and keep applicant records accurate in TargetX, a Salesforce-based CRM.</p>
         </div>
       </div>
-
-      <h3 style="margin:3rem 0 1rem">Systems map: how my projects fit together</h3>
-      <div class="map-wrap">
-        <svg viewBox="0 0 980 300" role="img" aria-labelledby="mapTitle mapDesc">
-          <title id="mapTitle">Systems map</title>
-          <desc id="mapDesc">MaintainIQ intake sends work requests to the Service Desk. Service Desk ticket and SLA data, admissions records and intake exports feed an IT operations reporting layer. Intake and Service Desk are built; Records and Reporting are planned.</desc>
-          <defs>
-            <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#38bdf8"/></marker>
-            <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#64748b"/></marker>
-          </defs>
-          <g font-family="Inter, Segoe UI, sans-serif">
-            <rect x="20" y="30" width="250" height="96" rx="14" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
-            <text x="40" y="62" fill="#e2e8f0" font-size="18" font-weight="700">Intake · MaintainIQ</text>
-            <text x="40" y="86" fill="#94a3b8" font-size="14">free text → work request</text>
-            <text x="40" y="108" fill="#34d399" font-size="12" font-family="JetBrains Mono, monospace">● built</text>
-
-            <rect x="365" y="30" width="250" height="96" rx="14" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
-            <text x="385" y="62" fill="#e2e8f0" font-size="18" font-weight="700">Service Desk</text>
-            <text x="385" y="86" fill="#94a3b8" font-size="14">priority · SLA · workflow · audit</text>
-            <text x="385" y="108" fill="#34d399" font-size="12" font-family="JetBrains Mono, monospace">● built · live demo</text>
-
-            <rect x="20" y="180" width="250" height="96" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2" stroke-dasharray="6 5"/>
-            <text x="40" y="212" fill="#cbd5e1" font-size="18" font-weight="700">Records · Admissions</text>
-            <text x="40" y="236" fill="#94a3b8" font-size="14">Java · Spring Boot · PostgreSQL</text>
-            <text x="40" y="258" fill="#a5b4fc" font-size="12" font-family="JetBrains Mono, monospace">○ planned</text>
-
-            <rect x="710" y="105" width="250" height="96" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2" stroke-dasharray="6 5"/>
-            <text x="730" y="137" fill="#cbd5e1" font-size="18" font-weight="700">Reporting · IT Ops</text>
-            <text x="730" y="161" fill="#94a3b8" font-size="14">SQL star schema · Power BI</text>
-            <text x="730" y="183" fill="#a5b4fc" font-size="12" font-family="JetBrains Mono, monospace">○ planned</text>
-
-            <path d="M270 78 H357" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#a1)"/>
-            <text x="282" y="68" fill="#94a3b8" font-size="12">work requests</text>
-            <path d="M615 78 H660 Q680 78 680 98 V140 Q680 153 700 153" stroke="#38bdf8" stroke-width="2" fill="none" marker-end="url(#a1)"/>
-            <text x="626" y="68" fill="#94a3b8" font-size="12">ticket + SLA data</text>
-            <path d="M270 228 H660 Q680 228 680 208 V170 Q680 158 700 158" stroke="#64748b" stroke-width="2" fill="none" stroke-dasharray="6 5" marker-end="url(#a2)"/>
-            <text x="420" y="218" fill="#94a3b8" font-size="12">application funnel</text>
-          </g>
-        </svg>
-        <div class="legend"><span class="l-live">built and on GitHub</span><span class="l-plan">on the roadmap</span></div>
-      </div>
     </div>
   </section>
 
-  <!-- ===================== PROJECTS ===================== -->
+  <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
-      <p class="kicker">// projects</p>
-      <h2 class="section-title">Flagship projects</h2>
+      <h2 class="section-title">Projects</h2>
       <p class="section-lead">Complete, tested applications with architecture notes and a development log. Personal portfolio projects built with AI pair-programming. I set the requirements, review every change and can explain each design decision.</p>
 
       <div class="flagships">
         <article class="project featured">
-          <span class="status">● live demo · CI passing</span>
+          <span class="status">Live demo · CI passing</span>
           <h3>Service Desk Ticketing System</h3>
           <a href="https://service-desk-ticketing-system.onrender.com" target="_blank" rel="noopener"><img class="shot" src="assets/service-desk-queue.png" alt="Ticket queue sorted by priority with live SLA countdown" loading="lazy" /></a>
           <p>An IT service desk modelled on how internal support teams handle incidents.</p>
@@ -156,18 +109,21 @@
         </article>
 
         <article class="project featured">
-          <span class="status">● CI passing</span>
+          <span class="status">CI passing</span>
           <h3>MaintainIQ Intake</h3>
+          <a href="https://github.com/bharathgopalswamy/maintainiq-intake" target="_blank" rel="noopener"><img class="shot" src="assets/maintainiq-export.jpg" alt="Verified work request with JSON and CSV export buttons" loading="lazy" width="1200" height="1155" /></a>
           <p>Turns plain-language maintenance reports into structured CMMS work requests. A person reviews every field before anything is submitted.</p>
           <ul>
             <li>Gemini API extraction validated against a <b>Zod schema</b>; unknown fields stay blank and are flagged, never invented</li>
             <li>Deterministic <b>safety rules</b> (gas, fire, electrical) escalate priority independently of the AI</li>
             <li>Internal errors are logged on the server, never shown to users</li>
-            <li>Automated tests, GitHub Actions CI and a two-stage Docker image</li>
+            <li>Verified records <b>export as JSON or CSV</b>, with protection against spreadsheet formula injection</li>
+            <li>56 automated tests, GitHub Actions CI and a two-stage Docker image</li>
           </ul>
           <div class="tags"><span class="tag">React</span><span class="tag">Express</span><span class="tag">Gemini API</span><span class="tag">Zod</span><span class="tag">Vitest</span><span class="tag">Docker</span></div>
           <div class="links">
             <a href="https://github.com/bharathgopalswamy/maintainiq-intake" target="_blank" rel="noopener">Source</a>
+            <a href="https://github.com/bharathgopalswamy/maintainiq-intake/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture</a>
           </div>
         </article>
       </div>
@@ -210,11 +166,10 @@
     </div>
   </section>
 
-  <!-- ===================== EXPERIENCE ===================== -->
+  <!-- EXPERIENCE -->
   <section id="experience" class="section-alt">
     <div class="container">
-      <p class="kicker">// experience</p>
-      <h2 class="section-title">Where I've worked</h2>
+      <h2 class="section-title">Experience</h2>
       <p class="section-lead">Software development, website support and, now, the records side of a university admissions office.</p>
 
       <ol class="timeline">
@@ -273,10 +228,9 @@
     </div>
   </section>
 
-  <!-- ===================== EDUCATION, AWARD, CERTS ===================== -->
+  <!-- EDUCATION, AWARD, CERTS -->
   <section id="education">
     <div class="container">
-      <p class="kicker">// education</p>
       <h2 class="section-title">Education and recognition</h2>
 
       <div class="two-col" style="margin-bottom:1.4rem">
@@ -296,7 +250,7 @@
         <div class="card award">
           <a href="award.jpg" target="_blank" rel="noopener"><img src="award.jpg" alt="Media X Award certificate" loading="lazy" /></a>
           <div>
-            <span class="icon mono" style="color:var(--cyan);font-size:.85rem">award · 2026</span>
+            <span class="small muted">Award · 2026</span>
             <h3 style="margin:.3rem 0">Media X Award</h3>
             <p>StFX Students' Union Student Leadership Awards 2026, for contributions to the Union's website and digital communications. <a href="award.jpg" target="_blank" rel="noopener">View certificate</a></p>
           </div>
@@ -317,11 +271,10 @@
     </div>
   </section>
 
-  <!-- ===================== SKILLS ===================== -->
+  <!-- SKILLS -->
   <section id="skills" class="section-alt">
     <div class="container">
-      <p class="kicker">// toolbox</p>
-      <h2 class="section-title">Skills and how I work</h2>
+      <h2 class="section-title">Skills</h2>
       <div class="skills" style="margin-bottom:2.5rem">
         <div class="card"><h3>Application development</h3><ul><li>React</li><li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>REST APIs</li><li>Zod</li><li>HTML/CSS</li></ul></div>
         <div class="card"><h3>Data and reporting</h3><ul><li>SQL</li><li>MySQL</li><li>SQLite</li><li>MongoDB</li><li>Python</li><li>Excel</li><li>Power BI</li></ul></div>
@@ -337,11 +290,10 @@
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="contact-box">
-        <p class="kicker">// contact</p>
         <h2 class="section-title">Looking for a full-time technology role in Canada</h2>
         <p class="muted" style="max-width:40rem;margin:0 auto">Junior software developer, application or IT support analyst, or business systems analyst. Based in Nova Scotia; open to Atlantic Canada, remote within Canada, and relocation for the right role.</p>
         <div class="btn-row">
